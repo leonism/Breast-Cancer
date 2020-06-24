@@ -1,23 +1,28 @@
-# Data Wrangling with Pandas
+# Introduction
 
-If you are trying to learn how to manipulate data in python you have come to the right place. 
+It's something classical for just about any data science practitioners out there, in extending their initial milestone with various resources of dataset around the internet. That way, you could expand your skill sets and experiences with something that you're less familiar with and gain new knowledge and expertise from it. This article is no different, where I wish to explore further on different areas aside from my current domain of expertise.   
 
-## What is this?
+Aside from `digital marketing` or `media investment`, `healthcare` is another industry that really caught my attention. According to [WHO official site](https://www.who.int/news-room/fact-sheets/detail/cancer#:~:text=Cancer%20is%20the%20second%20leading,-%20and%20middle-income%20countries.), Cancer is the second leading cause of death globally, and is responsible for an estimated 9.6 million deaths in 2018. 
 
-This folder includs a jupyter notebook which goes over key functionality in pandas for data wrangling.
+And moving forward, this article will try to address and give an overview on how you may apply `Machine Learning` to predict the symptoms of breast cancer to a certain individual. The cancer dataset graciously donated from various academicians & can be found at [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29) site
 
-Check out the [video](https://www.youtube.com) tutorial on youtube or the written [article](https://towardsdatascience.com/data-wrangling-with-pandas-5b0be151df4e) on Medium. 
+Furthermore, we'll be using [Python](https://www.python.org/) flavor of [Pandas](https://pandas.pydata.org/), [Seaborn](https://seaborn.pydata.org/) and [Scikit-learn](https://scikit-learn.org/) libraries to explore, clean, combine and run machine-learning prediction model for our use case. As it will become rather a long piece of article, I will try to break them down into the several steps, as per the following list of pointers.
 
-## Overview
+# Steps
 
-### The following pandas functionalities  will be covered:
+1. `Loading Libraries.`  
+2. `Data Exploring.` 
+3. `Data Visualization.`
+4. `One Hot Encoding.`
+5. `Feature Generation.`
+6. `Data Splitting.`
+7. `Machine Learning Modeling.`
+8. `Data Prediction.`
 
-1. Data exploration - columns, unique values in a column, describe, duplicates
-1. Dealing with missing values - quantifying missing values per column, filling & dropping missing values
-1. Reshaping data - one hot encoding, pivot tables, joins, grouping and aggregating
-1. Filtering data
-1. Other - Making descriptive columns, element-wise conditional operations
+# Credits
 
-## Credits
 1. Data source: [UCI](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic))
+1. Scikit-Learn [Scikit-Learn](https://scikit-learn.org/)
 1. Pandas functionality: [Documentation](https://pandas.pydata.org/)
+1. And Stackoverflow's QnA Posts.
+
