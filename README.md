@@ -983,7 +983,7 @@ In our (Titanic problem) case:
 
 > **True Positive:** The classifier predicted _Survived_ **and** the passenger actually _Survived_.
 > **True Negative:** The classifier predicted _Not Survived_ **and** the passenger actually _Not Survived_.
-> **False Postiive:** The classifier predicted _Survived_ **but** the passenger actually _Not Survived_.
+> **False Postive:** The classifier predicted _Survived_ **but** the passenger actually _Not Survived_.
 > **False Negative:** The classifier predicted _Not Survived_ **but** the passenger actually _Survived_.
 
 In the example code below, we plot a confusion matrix for the prediction of **_Random Forest Classifier_** on our training dataset. This shows how many entries are correctly and incorrectly predicted by our classifer.
