@@ -2,25 +2,15 @@
 
 ![predicting-breast-cancer-using-machine-learning.png](images/predicting-breast-cancer-using-machine-learning.png)
 
-Imagine harnessing the power of machine learning to predict one of the
-most prevalent and life-threatening diseases: breast cancer. As data
-science enthusiasts, we often seek new challenges to expand our skills
-and dive into unexplored territories. This journey not only enhances our
-technical prowess but also broadens our understanding of diverse fields.
+Imagine harnessing the power of machine learning to predict one of the most prevalent and life-threatening diseases: breast cancer. As data science enthusiasts, we often seek new challenges to expand our skills and dive into unexplored territories. This journey not only enhances our technical prowess but also broadens our understanding of diverse fields.
 
 This article invites you to venture beyond the realms of
-`digital marketing` and `media investment` into the captivating world of
-`healthcare`. Did you know that cancer is the second leading cause of
-death globally, accounting for approximately 9.6 million deaths in 2018,
-according to the
-[WHO](https://www.who.int/news-room/fact-sheets/detail/cancer#:~:text=Cancer%20is%20the%20second%20leading,-%20and%20middle-income%20countries.). This staggering statistic underscores the urgent need for innovative solutions in early detection and treatment.
+`digital marketing` and `media investment` into the captivating world of `healthcare`. Did you know that cancer is the second leading cause of death globally, accounting for approximately 9.6 million deaths in 2018,
+according to the [WHO](https://www.who.int/news-room/fact-sheets/detail cancer#:~:text=Cancer%20is%20the%20second%20leading,-%20and%20middle-income%20countries.). This staggering statistic underscores the urgent need for innovative solutions in early detection and treatment.
 
-Join me as we explore how machine learning can be a game-changer in
-predicting breast cancer symptoms. Well utilize a comprehensive
-dataset from [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29), generously provided by academicians, to build our predictive model.
+Join me as we explore how machine learning can be a game-changer in predicting breast cancer symptoms. Well utilize a comprehensive dataset from [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29), generously provided by academicians, to build our predictive model.
 
-To bring this vision to life, well employ powerful Python libraries
-like [Pandas](https://pandas.pydata.org/), [Seaborn](https://seaborn.pydata.org/), and [Scikit-learn](https://scikit-learn.org/). These tools will help us explore, clean, and visualize data, ultimately leading to a robust machine learning model. Ready to embark on this exciting adventure? Lets break it down into manageable steps:
+To bring this vision to life, well employ powerful Python libraries like [Pandas](https://pandas.pydata.org/), [Seaborn](https://seaborn.pydata.org/), and [Scikit-learn](https://scikit-learn.org/). These tools will help us explore, clean, and visualize data, ultimately leading to a robust machine learning model. Ready to embark on this exciting adventure? Lets break it down into manageable steps:
 
 1.  **Loading Libraries**
 2.  **Data Exploration**
@@ -31,31 +21,14 @@ like [Pandas](https://pandas.pydata.org/), [Seaborn](https://seaborn.pydata.org/
 7.  **Machine Learning Modeling**
 8.  **Data Prediction**
 
-Dive in and discover how you can leverage machine learning to make a
-meaningful impact in the fight against breast cancer.
+Dive in and discover how you can leverage machine learning to make a meaningful impact in the fight against breast cancer.
 
 ## Load Libraries
 
-Much like any other data exploratory process in Pandas or Python, the
-initial phase involves loading the essential libraries into our working
-Jupyter Notebook environment. These libraries are the backbone of our
-data analysis and machine learning endeavors, providing us with the
-tools needed to manipulate, visualize, and model our data. Whether
-youre using Jupyter Notebook, Google Colab, or Kaggle, the process
-remains largely the same. These platforms offer robust environments that
-support Python and its libraries, making them ideal for data science
-projects.
+Much like any other data exploratory process in Pandas or Python, the initial phase involves loading the essential libraries into our working Jupyter Notebook environment. These libraries are the backbone of our data analysis and machine learning endeavors, providing us with the tools needed to manipulate, visualize, and model our data. Whether
+youre using Jupyter Notebook, Google Colab, or Kaggle, the process remains largely the same. These platforms offer robust environments that support Python and its libraries, making them ideal for data science projects.
 
-For this tutorial, Ill stick to my faithful Jupyter Notebook
-environment, known for its versatility and user-friendly interface.
-Jupyter Notebook allows for an interactive data analysis experience,
-where code, visualizations, and explanatory text can coexist seamlessly.
-This setup will enable us to document our process comprehensively and
-adjust our code on the fly as we delve into the breast cancer dataset.
-While youre free to use any Intwhegrated Development Environment (IDE)
-you prefer, Jupyter Notebooks integration with libraries like Pandas,
-Seaborn, and Scikit-learn makes it an excellent choice for this
-step-by-step guide.
+For this tutorial, I'll stick to my faithful Jupyter Notebook environment, known for its versatility and user-friendly interface. Jupyter Notebook allows for an interactive data analysis experience, where code, visualizations, and explanatory text can coexist seamlessly. This setup will enable us to document our process comprehensively and adjust our code on the fly as we delve into the breast cancer dataset. While youre free to use any Integrated Development Environment (IDE) you prefer, Jupyter Notebooks integration with libraries like Pandas, Seaborn, and Scikit-learn makes it an excellent choice for this step-by-step guide.
 
 ```python
 import numpy as np # linear algebra
@@ -67,9 +40,7 @@ import seaborn as sns # visualization library
 
 Start by creating a directory on your computer. Although Im using a MacOS environment, the instructions provided here are applicable across different platforms. For the purpose of this walkthrough, lets name the directory `Project`. This will serve as our main working directory. Navigate into the `Project` folder, as this will be our base for organizing and executing the steps outlined in this tutorial. The next step is to download the breast cancer dataset from the [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29) site, which well use for our machine learning model.
 
-Within the `Project` directory, create a new folder named `data` and
-copy the downloaded CSV file into this `data` directory. This organization ensures that all relevant files are neatly stored and easily accessible throughout the tutorial. By structuring our project this way, we facilitate a smooth workflow and maintain order as we progress. Now that everything is set up, we can load the dataset into our Jupyter Notebook. This step allows us to examine, manipulate, and observe the data, laying the groundwork for our machine learning
-exploration.
+Within the `Project` directory, create a new folder named `data` and copy the downloaded CSV file into this `data` directory. This organization ensures that all relevant files are neatly stored and easily accessible throughout the tutorial. By structuring our project this way, we facilitate a smooth workflow and maintain order as we progress. Now that everything is set up, we can load the dataset into our Jupyter Notebook. This step allows us to examine, manipulate, and observe the data, laying the groundwork for our machine learning exploration.
 
 ```python
 df = pd.read_csv('data/breast_cancer_data.csv')
@@ -77,8 +48,7 @@ df = pd.read_csv('data/breast_cancer_data.csv')
 
 ## Dataset Size
 
-Once we have completed the initial setup, we can proceed to analyze our
-dataset further. A common starting point in any data analysis project is to understand the size of the dataset. You might be wondering, just how large is our dataset? This question is easily answered using the `.shape` method in Pandas.
+Once we have completed the initial setup, we can proceed to analyze our dataset further. A common starting point in any data analysis project is to understand the size of the dataset. You might be wondering, just how large is our dataset? This question is easily answered using the `.shape` method in Pandas.
 
 By applying the `.shape` method to our dataset, we can quickly obtain the number of rows and columns. This method returns a tuple representing the dimensions of the dataset, giving us an immediate sense of its scale. Understanding the size of our dataset is crucial as it informs us about the volume of data we will be working with and helps in planning subsequent data processing and analysis steps.
 
@@ -95,8 +65,7 @@ We can see we have the following information at hand:
 
 ## Data Types
 
-Its always a good idea to get cozy with our dataset, not just by looking at its size, but by understanding what its really made of. Think of it like getting to know a new friend---you wouldn't just ask them how tall they are, right? Youd want to know their quirks, their traits, what makes them tick. The same goes for our data. Knowing the types of data in each column helps us groove through the feature
-generation phase with ease.
+Its always a good idea to get cozy with our dataset, not just by looking at its size, but by understanding what its really made of. Think of it like getting to know a new friend---you wouldn't just ask them how tall they are, right? Youd want to know their quirks, their traits, what makes them tick. The same goes for our data. Knowing the types of data in each column helps us groove through the feature generation phase with ease.
 
 So, let's kick back and take a deeper dive. By checking out the data types of each column, we get the full picture: the numbers, the categories, the text. This insight is like the smooth rhythm of a jazz tune, guiding us to apply the right transformations and manipulations. When were in sync with our data, everything just flows better, leading to more accurate and reliable models. To get this vibe going, well use the `.dtypes` attribute in Pandas. It's our backstage pass to the inner workings of the dataset, giving us a clear overview of the structure and content. Lets get jazzy with our data and see what it's composed of!
 
@@ -121,8 +90,7 @@ df.dtypes
 
 ### The Data Legend
 
-Lets lay down the smooth beats of our dataset. Heres the lowdown on
-the columns we have, as described by the source:
+Lets lay down the smooth beats of our dataset. Heres the lowdown on the columns we have, as described by the source:
 
 - `Patient ID`: id number
 - `Clump Thickness`: 1--10
@@ -137,12 +105,7 @@ the columns we have, as described by the source:
 - `Class`: malignant or benign
 - `Doctor name`: 4 different doctors
 
-So, what's the vibe here? The `Patient ID` is our unique identifier,
-ensuring each record stands out. The `Class` column is the headline act,
-telling us whether the tumor is `malignant` (cancerous) or `benign` (not
-cancerous). The rest of the columns? Theyre numeric medical
-descriptions of the tumor, except for `Doctor name`, which adds a
-categorical twist.
+So, what's the vibe here? The `Patient ID` is our unique identifier, ensuring each record stands out. The `Class` column is the headline act, telling us whether the tumor is `malignant` (cancerous) or `benign` (not cancerous). The rest of the columns? Theyre numeric medical descriptions of the tumor, except for `Doctor name`, which adds a categorical twist.
 
 > Keep this in mind---if our goal is to predict whether a tumor is
 > cancerous based on the other features, we'll need to perform some
@@ -152,15 +115,9 @@ categorical twist.
 
 ## First & Last Rows
 
-Now that we've got the lay of the land, lets dive in and see what the
-top five records in our dataset look like. This peek at the first few
-rows will give us a quick feel for the data and help us spot any obvious
-issues or patterns right off the bat.
+Now that we've got the lay of the land, lets dive in and see what the top five records in our dataset look like. This peek at the first few rows will give us a quick feel for the data and help us spot any obvious issues or patterns right off the bat.
 
-To do this, well use the `.head()` method in Pandas, which will show
-us the first five rows. Its like getting a sneak preview of the
-opening act before the main event. This simple step is crucial for
-ensuring were on the right track and that our data is ready to roll.
+To do this, well use the `.head()` method in Pandas, which will show us the first five rows. Its like getting a sneak preview of the opening act before the main event. This simple step is crucial for ensuring were on the right track and that our data is ready to roll.
 
 ```python
 df.head()
@@ -282,11 +239,7 @@ df.head()
 </div>
 ```
 
-Additionally, checking the last few records with the `.tail()` method
-will give us a complete sense of the datasets structure. This
-combination of the first and last rows provides a balanced overview,
-ensuring no surprises lurk at the end. Lets groove through the data
-and see what stories the top and bottom rows tell us!
+Additionally, checking the last few records with the `.tail()` method will give us a complete sense of the datasets structure. This combination of the first and last rows provides a balanced overview, ensuring no surprises lurk at the end. Lets groove through the data and see what stories the top and bottom rows tell us!
 
 ```python
 df.tail()
@@ -556,23 +509,11 @@ df.describe()
 
 ## Categorical Analysis
 
-Just like tuning into a different frequency, lets shift our focus to
-the categorical side of the spectrum. With the
-`.describe(include=['O'])` method, were about to unravel the mysteries
-of our categorical data. While the output might be a bit more concise
-compared to its numerical counterpart, it still packs a punch.
+Just like tuning into a different frequency, lets shift our focus to the categorical side of the spectrum. With the `.describe(include=['O'])` method, were about to unravel the mysteries of our categorical data. While the output might be a bit more concise compared to its numerical counterpart, it still packs a punch.
 
-By honing in on the categorical variables---those with a data type of
-`object`---we gain valuable insights into their distribution and
-uniqueness. Its like flipping through the pages of a well-worn record
-collection, each category offering its own distinct vibe.
+By honing in on the categorical variables---those with a data type of `object`---we gain valuable insights into their distribution and uniqueness. Its like flipping through the pages of a well-worn record collection, each category offering its own distinct vibe.
 
-So, why bother? Well, understanding the landscape of our categorical
-data sets the stage for deeper analysis. Just like a DJ crafting the
-perfect mix, these insights help us blend and remix our data with
-precision. With the `.describe(include=['O'])` method in hand, were
-ready to spin some categorical magic and uncover the stories hidden
-within our dataset. Lets dive in and see what melodies await! 🎵
+So, why bother? Well, understanding the landscape of our categorical data sets the stage for deeper analysis. Just like a DJ crafting the perfect mix, these insights help us blend and remix our data with precision. With the `.describe(include=['O'])` method in hand, were ready to spin some categorical magic and uncover the stories hidden within our dataset. Lets dive in and see what melodies await! 🎵
 
 ```python
 df.describe(include=['O'])
@@ -636,24 +577,11 @@ df.describe(include=['O'])
 
 ## Data Reshaping
 
-Time to remix our data and give it a fresh new vibe! With the code
-snippet youve got in hand, were about to shake things up and reshape
-our dataset like never before. By grooving to the beat of
-`df.groupby(by=['doctor_name', 'class']).count()`, were taking our
-data on a whole new journey.
+Time to remix our data and give it a fresh new vibe! With the code snippet youve got in hand, were about to shake things up and reshape our dataset like never before. By grooving to the beat of `df.groupby(by=['doctor_name', 'class']).count()`, were taking our data on a whole new journey.
 
-Picture this: were gathering our data around the DJ booth, grouping it
-by the soothing sounds of `doctor_name` and the electrifying beats of
-`class`. Then, we crank up the volume with the aggregation function,
-counting up the hits in each group. Its like taking our dataset to a
-cool underground club, where every combination of doctor and class
-brings its own unique vibe.
+Picture this: were gathering our data around the DJ booth, grouping it by the soothing sounds of `doctor_name` and the electrifying beats of `class`. Then, we crank up the volume with the aggregation function, counting up the hits in each group. Its like taking our dataset to a cool underground club, where every combination of doctor and class brings its own unique vibe.
 
-Why does this matter? Well, reshaping our data in this way allows us to
-uncover fresh insights and patterns that might have been hidden before.
-Its like remixing a classic track---same ingredients, but with a whole
-new flavor. So, grab your data and lets hit the dance floor, because
-were about to reshape it into something truly groovy! 🎧💃
+Why does this matter? Well, reshaping our data in this way allows us to uncover fresh insights and patterns that might have been hidden before. Its like remixing a classic track---same ingredients, but with a whole new flavor. So, grab your data and lets hit the dance floor, because were about to reshape it into something truly groovy! 🎧💃
 
 ```python
 # This aggreates the data by its column names, then we pass the aggregation function (size = count)
@@ -1383,12 +1311,7 @@ Sure, its like sifting through a crate of vinyl, each record with its own scratc
 
 ## Missing Records
 
-Among one of the easiet way to identify whether or not your dataset has
-any missing data in them, would be to check them using the `.isna()`
-method and combine them with the `.sum()` function. It would in return,
-give you information on how many rows gone missing in your current
-dataset. Usually Pandas, would assing them with the value of `NaN`, but
-it can always be just a blank value in the record cell.
+Among one of the easiet way to identify whether or not your dataset has any missing data in them, would be to check them using the `.isna()` method and combine them with the `.sum()` function. It would in return, give you information on how many rows gone missing in your current dataset. Usually Pandas, would assing them with the value of `NaN`, but it can always be just a blank value in the record cell.
 
 ```python
 df.isna().sum()
@@ -2155,8 +2078,7 @@ Well, guess what? Were about to dive into the nitty-gritty and unravel this myst
 
 ### Count Duplications
 
-Lets analyze how many times a single `patient_id` value, was being
-recorded more than once, in the next table.
+Lets analyze how many times a single `patient_id` value, was being recorded more than once, in the next table.
 
 - Borrowed from
   <https://stackoverflow.com/questions/38309729/count-unique-values-with-pandas-per-groups>
@@ -2180,9 +2102,7 @@ patient_id
 - 809912 1
   Name: count, Length: 637, dtype: int64
 
-Surprisingly, some are getting recorded more than twice, some are even
-getting recorded 6 times. Lets move on to the next steps on how to
-deal with them.
+Surprisingly, some are getting recorded more than twice, some are even getting recorded 6 times. Lets move on to the next steps on how to deal with them.
 
 ```python
 df.drop_duplicates(subset="patient_id", keep='first', inplace = True)
@@ -2467,16 +2387,9 @@ False
 
 # Visual Analysis
 
-And they say, picture says a thousand words. And I couldn't agree more
-with the statement, we as a human easily absorb information, through
-graphs, colors and visualization, in contrast to just plain numbers. In
-this section, lets try to visualize our findings better.
+And they say, picture says a thousand words. And I couldn't agree more with the statement, we as a human easily absorb information, through graphs, colors and visualization, in contrast to just plain numbers. In this section, lets try to visualize our findings better.
 
-There are numerous great visualization libraries out there for both
-Python and Pandas, but Ive been experimenting with Seaborn for awhile,
-and found them somewhat easier to implement to our objectives. Here are
-some of the benefit of having Seaborn as your library of choice for
-visualisation as taken from the official homepage:
+There are numerous great visualization libraries out there for both Python and Pandas, but Ive been experimenting with Seaborn for awhile, and found them somewhat easier to implement to our objectives. Here are some of the benefit of having Seaborn as your library of choice for visualisation as taken from the official homepage:
 
 > Seaborn aims to make visualization a central part of exploring and
 > understanding data. Its dataset-oriented plotting \> functions operate
@@ -2523,11 +2436,7 @@ Here is some of the functionality that seaborn offers:
 
 ## Patients for Each Doctor?
 
-Ever wonder how many patients each doctor handled from the dataset? We
-know for sure, we have 4 doctors from the dataset, but havent got some
-perfect ideas on how many patients each doctor is handling them. So why
-dont we try to visualize them, to see how many patients for each
-doctor needs to handle from the dataset?
+Ever wonder how many patients each doctor handled from the dataset? We know for sure, we have 4 doctors from the dataset, but havent got some perfect ideas on how many patients each doctor is handling them. So why dont we try to visualize them, to see how many patients for each doctor needs to handle from the dataset?
 
 ```python
 df['doctor_name'].value_counts()
@@ -2569,11 +2478,7 @@ sns.despine()
 
 ## Class Cases For Each Doctor?
 
-As mentioned on the earlier sections, we have a column name `class`,
-which basically contains the value of either `benign` and `malignant`.
-We wish to understand further whether a persons tumor is `malignant`
-(cancerous) or `benign` (not cancerous). With that being said, lets
-get down to business and try to visualize them further down below.
+As mentioned on the earlier sections, we have a column name `class`, which basically contains the value of either `benign` and `malignant`. We wish to understand further whether a persons tumor is `malignant` (cancerous) or `benign` (not cancerous). With that being said, lets get down to business and try to visualize them further down below.
 
 ```python
 class_by_doctor = df[("class")].value_counts()
@@ -2610,11 +2515,7 @@ sns.barplot(x = "patient_id", y='class', hue="doctor_name", ci=None, palette='Rd
 
 ## Class Case Per Doctor?
 
-As mentioned on the earlier sections, we have a column name `class`,
-which basically contains the value of `benign` and `malignant`. We wish
-to understand further whether a persons tumor is `malignant`
-(cancerous) or `benign` (not cancerous). With that being said, lets
-get down to business and try to visualize them further down below.
+As mentioned on the earlier sections, we have a column name `class`, which basically contains the value of `benign` and `malignant`. We wish to understand further whether a persons tumor is `malignant` (cancerous) or `benign` (not cancerous). With that being said, lets get down to business and try to visualize them further down below.
 
 ```python
 fig_dims = (12, 6)
@@ -2717,8 +2618,7 @@ combined_doctors_hotEncoded_df.isnull().sum().sum()
 
 # Feature Generation
 
-This is among the crucial aspect area of `Machine Learning` model in the
-article, as this article [point out](https://towardsdatascience.com/data-wrangling-with-pandas-5b0be151df4e) an individual might be classified as having a cancer if meet the following condtion:
+This is among the crucial aspect area of `Machine Learning` model in the article, as this article [point out](https://towardsdatascience.com/data-wrangling-with-pandas-5b0be151df4e) an individual might be classified as having a cancer if meet the following condtion:
 
 - Their `cell_size_uniformity` is greater than 5, and
 - Their `cell_shape_uniformity` is greater than 5.
@@ -2776,8 +2676,7 @@ Heatmap of Correlation between different features:
 > Negative correlation, i.e. increase in one feature will decrease the
 > other feature & vice-versa.
 
-In our case, we focus on which features have strong positive or negative
-correlation with the _Survived_ feature.
+In our case, we focus on which features have strong positive or negative correlation with the _Survived_ feature.
 
 ```python
 plt.figure(figsize=(30,20))
@@ -2881,10 +2780,7 @@ test.info()
 
 ## Feature Selection
 
-We drop unnecessary columns/features and keep only the useful ones for
-our experiment. Column _patient_id_ is only dropped from Train set
-because we need _patient_id_ in Test set while for running the
-experimentation.
+We drop unnecessary columns/features and keep only the useful ones for our experiment. Column _patient_id_ is only dropped from Train set because we need _patient_id_ in Test set while for running the experimentation.
 
 ```python
 train = train.drop(['patient_id', 'new_column'], axis=1)
@@ -2942,8 +2838,7 @@ X_test
 
 ## Logistic Regression
 
-[Logistic
-regression](https://en.wikipedia.org/wiki/Logistic_regression), or logit regression, or logit model is a regression model where the dependent variable (DV) is categorical. This article covers the case of a binary dependent variable---that is, where it can take only two values, "0" and "1", which represent outcomes such as pass/fail, win/lose, alive/dead or healthy/sick. Cases where the dependent variable has more than two outcome categories may be analyzed in multinomial logistic regression, or, if the multiple categories are ordered, in ordinal logistic regression.
+[Logistic regression](https://en.wikipedia.org/wiki/Logistic_regression), or logit regression, or logit model is a regression model where the dependent variable (DV) is categorical. This article covers the case of a binary dependent variable---that is, where it can take only two values, "0" and "1", which represent outcomes such as pass/fail, win/lose, alive/dead or healthy/sick. Cases where the dependent variable has more than two outcome categories may be analyzed in multinomial logistic regression, or, if the multiple categories are ordered, in ordinal logistic regression.
 
 ```python
 clf = LogisticRegression()
@@ -2957,8 +2852,7 @@ print (str(acc_log_reg) + '%')
 
 [Support Vector Machine (SVM)](https://en.wikipedia.org/wiki/Support_vector_machine) model is a Supervised Learning model used for classification and regression analysis. It is a representation of the examples as points in space, mapped so that the examples of the separate categories are divided by a clear gap that is as wide as possible. New examples are then mapped into that same space and predicted to belong to a category based on which side of the gap they fall.
 
-In addition to performing linear classification, SVMs can efficiently perform a non-linear classification using what is called the kernel trick, implicitly mapping their inputs into high-dimensional feature spaces. Suppose some given data points each belong to one of two classes, and the goal is to decide which class a new data point will be in. In the case of support vector machines, a data point is viewed as a
-$p$-dimensional vector (a list of $p$ numbers), and we want to know whether we can separate such points with a $(p-1)$-dimensional hyperplane.
+In addition to performing linear classification, SVMs can efficiently perform a non-linear classification using what is called the kernel trick, implicitly mapping their inputs into high-dimensional feature spaces. Suppose some given data points each belong to one of two classes, and the goal is to decide which class a new data point will be in. In the case of support vector machines, a data point is viewed as a $p$-dimensional vector (a list of $p$ numbers), and we want to know whether we can separate such points with a $(p-1)$-dimensional hyperplane.
 
 When data are not labeled, supervised learning is not possible, and an unsupervised learning approach is required, which attempts to find natural clustering of the data to groups, and then map new data to these formed groups. The clustering algorithm which provides an improvement to the support vector machines is called **support vector clustering** and is often used in industrial applications either when data are not labeled or when only some data are labeled as a preprocessing for a classification pass.
 
