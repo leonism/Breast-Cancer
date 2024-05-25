@@ -38,7 +38,7 @@ import seaborn as sns # visualization library
 
 ## Load Dataset
 
-Start by creating a directory on your computer. Although Im using a MacOS environment, the instructions provided here are applicable across different platforms. For the purpose of this walkthrough, lets name the directory `Project`. This will serve as our main working directory. Navigate into the `Project` folder, as this will be our base for organizing and executing the steps outlined in this tutorial. The next step is to download the breast cancer dataset from the [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29) site, which well use for our machine learning model.
+Start by creating a directory on your computer. Although I'm using a MacOS environment, the instructions provided here are applicable across different platforms. For the purpose of this walkthrough, lets name the directory `Project`. This will serve as our main working directory. Navigate into the `Project` folder, as this will be our base for organizing and executing the steps outlined in this tutorial. The next step is to download the breast cancer dataset from the [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29) site, which well use for our machine learning model.
 
 Within the `Project` directory, create a new folder named `data` and copy the downloaded CSV file into this `data` directory. This organization ensures that all relevant files are neatly stored and easily accessible throughout the tutorial. By structuring our project this way, we facilitate a smooth workflow and maintain order as we progress. Now that everything is set up, we can load the dataset into our Jupyter Notebook. This step allows us to examine, manipulate, and observe the data, laying the groundwork for our machine learning exploration.
 
@@ -65,9 +65,9 @@ We can see we have the following information at hand:
 
 ## Data Types
 
-Its always a good idea to get cozy with our dataset, not just by looking at its size, but by understanding what its really made of. Think of it like getting to know a new friend---you wouldn't just ask them how tall they are, right? Youd want to know their quirks, their traits, what makes them tick. The same goes for our data. Knowing the types of data in each column helps us groove through the feature generation phase with ease.
+Its always a good idea to get cozy with our dataset, not just by looking at its size, but by understanding what its really made of. Think of it like getting to know a new friend---you wouldn't just ask them how tall they are, right? You'd want to know their quirks, their traits, what makes them tick. The same goes for our data, knowing the types of data in each column helps us groove through the feature generation phase with ease.
 
-So, let's kick back and take a deeper dive. By checking out the data types of each column, we get the full picture: the numbers, the categories, the text. This insight is like the smooth rhythm of a jazz tune, guiding us to apply the right transformations and manipulations. When were in sync with our data, everything just flows better, leading to more accurate and reliable models. To get this vibe going, well use the `.dtypes` attribute in Pandas. It's our backstage pass to the inner workings of the dataset, giving us a clear overview of the structure and content. Lets get jazzy with our data and see what it's composed of!
+So, let's kick back and take a deeper dive. By checking out the data types of each column, we get the full picture: the numbers, the categories, the text. This insight is like the smooth rhythm of a jazz tune, guiding us to apply the right transformations and manipulations. When were in sync with our data, everything just flows better, leading to more accurate and reliable models. To get this vibe going, well use the `.dtypes` attribute in Pandas. It's our backstage pass to the inner workings of the dataset, giving us a clear overview of the structure and content. Lets get jazzy with our data and see what it's really composed of!
 
 ```python
 # We need to observe the data types of each columns
@@ -190,9 +190,9 @@ df.groupby(by =['bare_nuclei', 'class']).count()
 
 # Data Cleaning
 
-Alright, time to chill and tidy up our dataset! Now that we've wrapped up the early analysis phase, its onto the next groove: cleaning up our data. Picture this: your data rolls in with all sorts of shapes and sizes, like records in a crate waiting to be sorted. But the real magic happens when we polish it up, turning it into the complete and comprehensive masterpiece we need.
+Alright, time to chill and tidy up our dataset! Now that we've wrapped up the early analysis phase, it's onto the next groove: cleaning up our data. Picture this: your data rolls in with all sorts of shapes and sizes, like records in a crate waiting to be sorted. But the real magic happens when we polish it up, turning it into the complete and comprehensive masterpiece we need.
 
-Sure, its like sifting through a crate of vinyl, each record with its own scratches and dust. But trust me, the best jams come from the cleanest cuts. By whipping our dataset into shape, were setting the stage for some serious feature engineering and analysis down the line. So, grab your data mop and broom, because were about to sweep away the dust and uncover the smooth grooves beneath. Lets get cleaning! 🎶✨
+Sure, it's like sifting through a crate of vinyl, each record with its own scratches and dust. But trust me, the best jams come from the cleanest cuts. By whipping our dataset into shape, were setting the stage for some serious feature engineering and analysis down the line. So, grab your data mop and broom, because were about to sweep away the dust and uncover the smooth grooves beneath. Lets get cleaning! 🎶✨
 
 ## Missing Records
 
@@ -220,7 +220,7 @@ Good to know that the `patient_id` has 0 missing values, but as you may notice, 
 
 ## How To Deal With?
 
-The real question isnt just about spotting the missing records and summing them up. The real jazz starts when you decide how to handle them before moving forward on your data wrangling journey. In this particular case, weve got a small amount of data with missing values---just `9 rows` out of `699`. Thats a mere `0.012`, or less than 1% of the total dataset. With such a small fraction, Im thinking we drop them like they're hot, using the `.dropna` method. And while were at it, let's break down the cool attributes that groove along with the `.dropna` method.
+The real question isnt just about spotting the missing records and summing them up. The real jazz starts when you decide how to handle them before moving forward on your data wrangling journey. In this particular case, weve got a small amount of data with missing values---just `9 rows` out of `699`. Thats a mere `0.012`, or less than 1% of the total dataset. With such a small fraction, I'm thinking we drop them like they're hot, using the `.dropna` method. And while were at it, let's break down the cool attributes that groove along with the `.dropna` method.
 
 - `Axis`: Decides if youre dropping rows or columns. `0` means rows,
   while `1` goes for columns.
@@ -228,7 +228,7 @@ The real question isnt just about spotting the missing records and summing them 
   drops rows or columns that are completely empty. Opt for `any`, and
   it drops those with even a single missing value.
 - `Inplace`: This ones crucial. If you set `inplace=True`, changes
-  will happen right on the DataFrame youre working with. If its
+  will happen right on the DataFrame youre working with. If it's
   `False` (which is the default), the original DataFrame stays
   untouched, and a new one is returned.
 
@@ -460,7 +460,7 @@ False
 
 ## Rechecking
 
-Now that we've got our dataset shining bright with no empty records, we might still be wondering if there's another way to double-check for any sneaky missing values. Good news, data groovers! Theres a slick method called `.isnull` that performs a boolean check, giving you a smooth true or false response to your inquiry. Its like having a jazz soloist confirming every note is in place. So, lets slide into it and make sure our dataset is as clean as a crisp vinyl record. Let's do this!
+Now that we've got our dataset shining bright with no empty records, we might still be wondering if there's another way to double-check for any sneaky missing values. Good news, data groovers! Theres a slick method called `.isnull` that performs a boolean check, giving you a smooth true or false response to your inquiry. it's like having a jazz soloist confirming every note is in place. So, lets slide into it and make sure our dataset is as clean as a crisp vinyl record. Let's do this!
 🎷✨
 
 ## Validating
@@ -680,7 +680,7 @@ df.isnull()
 
 So far, so groovy! From our dataset checks, everything's coming back with `False` values, and thats music to our ears. It means one thing: our dataset is spotless and ready to jam.
 
-With our data all tuned up, its time to move on to the next leg of our journey. So, lets keep the rhythm going and dive into the next adventure. Onward to data greatness! 🎷✨
+With our data all tuned up, it's time to move on to the next leg of our journey. So, lets keep the rhythm going and dive into the next adventure. Onward to data greatness! 🎷✨
 
 ## Duplicate Records
 
@@ -959,7 +959,7 @@ df[df.patient_id.duplicated(keep=False)].sort_values("patient_id")
 
 Alright, check this out: weve got a little situation on our hands. It seems like weve got `98` patient IDs making multiple appearances in our dataset. Some are showing up twice, while others are pulling off the triple play. Now, wouldn't it be sweet if we could get the lowdown on exactly how many times each patient ID is making a cameo?
 
-Well, guess what? Were about to dive into the nitty-gritty and unravel this mystery. Picture this: were peeling back the layers of duplication, analyzing each instance to tally up the total count. Its like detective work for data scientists---sleuthing through the numbers to uncover the truth. So, grab your magnifying glass and lets crack this case wide open. Were diving deep into the world of duplications, ready to count em up and bring clarity to our dataset! 🕵️‍♂️🔍
+Well, guess what? Were about to dive into the nitty-gritty and unravel this mystery. Picture this: were peeling back the layers of duplication, analyzing each instance to tally up the total count. it's like detective work for data scientists---sleuthing through the numbers to uncover the truth. So, grab your magnifying glass and lets crack this case wide open. Were diving deep into the world of duplications, ready to count em up and bring clarity to our dataset! 🕵️‍♂️🔍
 
 ### Count Duplications
 
@@ -1277,7 +1277,7 @@ And they say, picture says a thousand words. And I couldn't agree more with the 
 There are numerous great visualization libraries out there for both Python and Pandas, but Ive been experimenting with Seaborn for awhile, and found them somewhat easier to implement to our objectives. Here are some of the benefit of having Seaborn as your library of choice for visualisation as taken from the official homepage:
 
 > Seaborn aims to make visualization a central part of exploring and
-> understanding data. Its dataset-oriented plotting \> functions operate
+> understanding data. Its dataset-oriented plotting functions operate
 > on dataframes and arrays containing whole datasets and internally
 > perform the necessary semantic mapping and statistical aggregation to
 > produce informative plots.
