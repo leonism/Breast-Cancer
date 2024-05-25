@@ -6,7 +6,7 @@ Imagine harnessing the power of machine learning to predict one of the most prev
 
 This article invites you to venture beyond the realms of
 `digital marketing` and `media investment` into the captivating world of `healthcare`. Did you know that cancer is the second leading cause of death globally, accounting for approximately 9.6 million deaths in 2018,
-according to the [WHO](https://www.who.int/news-room/fact-sheets/detail cancer#:~:text=Cancer%20is%20the%20second%20leading,-%20and%20middle-income%20countries.). This staggering statistic underscores the urgent need for innovative solutions in early detection and treatment.
+according to the [WHO](https://www.who.int/news-room/fact-sheets/detailcancer#:~:text=Cancer%20is%20the%20second%20leading,-%20and%20middle-income%20countries.). This staggering statistic underscores the urgent need for innovative solutions in early detection and treatment.
 
 Join me as we explore how machine learning can be a game-changer in predicting breast cancer symptoms. Well utilize a comprehensive dataset from [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29), generously provided by academicians, to build our predictive model.
 
