@@ -248,7 +248,7 @@ As you can see now, the rows number have been decreased, from `699` to `690`, do
 df.isnull().values.any()
 ```
 
-````python
+```python
 False
 ```
 
@@ -262,7 +262,7 @@ So, our dataset's looking sharp, but let's not stop there. If you're curious whe
 
 ```python
 df.isnull()
-````
+```
 
 ![table-table-false.png](images/table-false.png)
 
@@ -460,8 +460,6 @@ doctor_name
 - Dr. Smith 164
 - Dr. Wong 141
   Name: count, dtype: int64
-
-{.cell .code execution_count="25"}
 
 ```python
 df['patient_id'].count()
@@ -682,10 +680,8 @@ pd.crosstab(combined_doctors_hotEncoded_df['class'], combined_doctors_hotEncoded
 
 Heatmap of Correlation between different features:
 
-> `Positive` = Positive correlation, i.e. increase in one feature will
-> increase the other feature & vice-versa.`<br >`{=html} \> `Negative` =
-> Negative correlation, i.e. increase in one feature will decrease the
-> other feature & vice-versa.
+> `Positive` = Positive correlation, i.e. increase in one feature will increase the other feature & vice-versa.
+> `Negative` = Negative correlation, i.e. increase in one feature will decrease the other feature & vice-versa.
 
 In our case, we focus on which features have strong positive or negative correlation with the _Survived_ feature.
 
@@ -895,16 +891,9 @@ print (acc_linear_svc)
 
 [$k$-nearest neighbors algorithm (k-NN)](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) is one of the simplest machine learning algorithms and is used for classification and regression. In both cases, the input consists of the $k$ closest training examples in the feature space. The output depends on whether $k$-NN is used for classification or regression:
 
-- In _$k$-NN classification_, the output is a class membership. An
-  object is classified by a majority vote of its neighbors, with the
-  object being assigned to the class most common among its $k$ nearest
-  neighbors ($k$ is a positive integer, typically small). If $k = 1$,
-  then the object is simply assigned to the class of that single
-  nearest neighbor.
+- In _$k$-NN classification_, the output is a class membership. An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its $k$ nearest neighbors ($k$ is a positive integer, typically small). If $k = 1$, then the object is simply assigned to the class of that single nearest neighbor.
 
-- In _$k$-NN regression_, the output is the property value for the
-  object. This value is the average of the values of its $k$ nearest
-  neighbors.
+- In _$k$-NN regression_, the output is the property value for the object. This value is the average of the values of its $k$ nearest neighbors.
 
 ```python
 clf = KNeighborsClassifier(n_neighbors = 3)
@@ -992,13 +981,10 @@ $\begin{matrix} & Predicted Positive & Predicted Negative \\ Actual Positive & T
 
 In our (Titanic problem) case:
 
-> **True Positive:** The classifier predicted _Survived_ **and** the
-> passenger actually _Survived_.`<br />`{=html} \>**True Negative:** The
-> classifier predicted _Not Survived_ **and** the passenger actually
-> _Not Survived_.`<br />`{=html} \>**False Postiive:** The classifier
-> predicted _Survived_ **but** the passenger actually _Not
-> Survived_.`<br />`{=html} \>**False Negative:** The classifier
-> predicted _Not Survived_ **but** the passenger actually _Survived_.
+> **True Positive:** The classifier predicted _Survived_ **and** the passenger actually _Survived_.
+> **True Negative:** The classifier predicted _Not Survived_ **and** the passenger actually _Not Survived_.
+> **False Postiive:** The classifier predicted _Survived_ **but** the passenger actually _Not Survived_.
+> **False Negative:** The classifier predicted _Not Survived_ **but** the passenger actually _Survived_.
 
 In the example code below, we plot a confusion matrix for the prediction of **_Random Forest Classifier_** on our training dataset. This shows how many entries are correctly and incorrectly predicted by our classifer.
 
