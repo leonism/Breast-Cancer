@@ -6,9 +6,9 @@ Imagine harnessing the power of machine learning to predict one of the most prev
 
 This article invites you to venture beyond the realms of `digital marketing` and `media investment` into the captivating world of `healthcare`. Did you know that cancer is the second leading cause of death globally, accounting for approximately 9.6 million deaths in 2018, according to the [WHO](https://www.who.int/news-room/fact-sheets/detailcancer#:~:text=Cancer%20is%20the%20second%20leading,-%20and%20middle-income%20countries.). This staggering statistic underscores the urgent need for innovative solutions in early detection and treatment.
 
-Join me as we explore how machine learning can be a game-changer in predicting breast cancer symptoms. Well utilize a comprehensive dataset from [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29), generously provided by academicians, to build our predictive model.
+Join me as we explore how machine learning can be a game-changer in predicting breast cancer symptoms. we'll utilize a comprehensive dataset from [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29), generously provided by academicians, to build our predictive model.
 
-To bring this vision to life, well employ powerful Python libraries like [Pandas](https://pandas.pydata.org/), [Seaborn](https://seaborn.pydata.org/), and [Scikit-learn](https://scikit-learn.org/). These tools will help us explore, clean, and visualize data, ultimately leading to a robust machine learning model. Ready to embark on this exciting adventure? Lets break it down into manageable steps:
+To bring this vision to life, we'll employ powerful Python libraries like [Pandas](https://pandas.pydata.org/), [Seaborn](https://seaborn.pydata.org/), and [Scikit-learn](https://scikit-learn.org/). These tools will help us explore, clean, and visualize data, ultimately leading to a robust machine learning model. Ready to embark on this exciting adventure? Let's break it down into manageable steps:
 
 1.  **Loading Libraries**
 2.  **Data Exploration**
@@ -24,9 +24,9 @@ Dive in and discover how you can leverage machine learning to make a meaningful 
 ## Load Libraries
 
 Much like any other data exploratory process in Pandas or Python, the initial phase involves loading the essential libraries into our working Jupyter Notebook environment. These libraries are the backbone of our data analysis and machine learning endeavors, providing us with the tools needed to manipulate, visualize, and model our data. Whether
-youre using Jupyter Notebook, Google Colab, or Kaggle, the process remains largely the same. These platforms offer robust environments that support Python and its libraries, making them ideal for data science projects.
+you're using Jupyter Notebook, Google Colab, or Kaggle, the process remains largely the same. These platforms offer robust environments that support Python and its libraries, making them ideal for data science projects.
 
-For this tutorial, I'll stick to my faithful Jupyter Notebook environment, known for its versatility and user-friendly interface. Jupyter Notebook allows for an interactive data analysis experience, where code, visualizations, and explanatory text can coexist seamlessly. This setup will enable us to document our process comprehensively and adjust our code on the fly as we delve into the breast cancer dataset. While youre free to use any Integrated Development Environment (IDE) you prefer, Jupyter Notebooks integration with libraries like Pandas, Seaborn, and Scikit-learn makes it an excellent choice for this step-by-step guide.
+For this tutorial, I'll stick to my faithful Jupyter Notebook environment, known for its versatility and user-friendly interface. Jupyter Notebook allows for an interactive data analysis experience, where code, visualizations, and explanatory text can coexist seamlessly. This setup will enable us to document our process comprehensively and adjust our code on the fly as we delve into the breast cancer dataset. While you're free to use any Integrated Development Environment (IDE) you prefer, Jupyter Notebooks integration with libraries like Pandas, Seaborn, and Scikit-learn makes it an excellent choice for this step-by-step guide.
 
 ```python
 import numpy as np # linear algebra
@@ -36,7 +36,7 @@ import seaborn as sns # visualization library
 
 ## Load Dataset
 
-Start by creating a directory on your computer. Although I'm using a MacOS environment, the instructions provided here are applicable across different platforms. For the purpose of this walkthrough, lets name the directory `Project`. This will serve as our main working directory. Navigate into the `Project` folder, as this will be our base for organizing and executing the steps outlined in this tutorial. The next step is to download the breast cancer dataset from the [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29) site, which well use for our machine learning model.
+Start by creating a directory on your computer. Although I'm using a MacOS environment, the instructions provided here are applicable across different platforms. For the purpose of this walkthrough, let's name the directory `Project`. This will serve as our main working directory. Navigate into the `Project` folder, as this will be our base for organizing and executing the steps outlined in this tutorial. The next step is to download the breast cancer dataset from the [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29) site, which we'll use for our machine learning model.
 
 Within the `Project` directory, create a new folder named `data` and copy the downloaded CSV file into this `data` directory. This organization ensures that all relevant files are neatly stored and easily accessible throughout the tutorial. By structuring our project this way, we facilitate a smooth workflow and maintain order as we progress. Now that everything is set up, we can load the dataset into our Jupyter Notebook. This step allows us to examine, manipulate, and observe the data, laying the groundwork for our machine learning exploration.
 
@@ -63,9 +63,9 @@ We can see we have the following information at hand:
 
 ## Data Types
 
-Its always a good idea to get cozy with our dataset, not just by looking at its size, but by understanding what its really made of. Think of it like getting to know a new friend---you wouldn't just ask them how tall they are, right? You'd want to know their quirks, their traits, what makes them tick. The same goes for our data, knowing the types of data in each column helps us groove through the feature generation phase with ease.
+It's always a good idea to get cozy with our dataset, not just by looking at its size, but by understanding what its really made of. Think of it like getting to know a new friend---you wouldn't just ask them how tall they are, right? You'd want to know their quirks, their traits, what makes them tick. The same goes for our data, knowing the types of data in each column helps us groove through the feature generation phase with ease.
 
-So, let's kick back and take a deeper dive. By checking out the data types of each column, we get the full picture: the numbers, the categories, the text. This insight is like the smooth rhythm of a jazz tune, guiding us to apply the right transformations and manipulations. When were in sync with our data, everything just flows better, leading to more accurate and reliable models. To get this vibe going, well use the `.dtypes` attribute in Pandas. It's our backstage pass to the inner workings of the dataset, giving us a clear overview of the structure and content. Lets get jazzy with our data and see what it's really composed of!
+So, let's kick back and take a deeper dive. By checking out the data types of each column, we get the full picture: the numbers, the categories, the text. This insight is like the smooth rhythm of a jazz tune, guiding us to apply the right transformations and manipulations. When were in sync with our data, everything just flows better, leading to more accurate and reliable models. To get this vibe going, we'll use the `.dtypes` attribute in Pandas. It's our backstage pass to the inner workings of the dataset, giving us a clear overview of the structure and content. Let's get jazzy with our data and see what it's really composed of!
 
 ```python
 # We need to observe the data types of each columns
@@ -88,7 +88,7 @@ df.dtypes
 
 ### The Data Legend
 
-Lets lay down the smooth beats of our dataset. Heres the lowdown on the columns we have, as described by the source:
+Let's lay down the smooth beats of our dataset. Heres the lowdown on the columns we have, as described by the source:
 
 - `Patient ID`: id number
 - `Clump Thickness`: 1--10
@@ -105,7 +105,7 @@ Lets lay down the smooth beats of our dataset. Heres the lowdown on the columns 
 
 So, what's the vibe here? The `Patient ID` is our unique identifier, ensuring each record stands out. The `Class` column is the headline act, telling us whether the tumor is `malignant` (cancerous) or `benign` (not cancerous). The rest of the columns? Theyre numeric medical descriptions of the tumor, except for `Doctor name`, which adds a categorical twist.
 
-> Keep this in mind---if our goal is to predict whether a tumor is
+> Keep this in mind --- if our goal is to predict whether a tumor is
 > cancerous based on the other features, we'll need to perform some
 > one-hot encoding on the categorical data and clean up the numerical
 > data. Just like tuning an instrument before a jam session, prepping
@@ -113,9 +113,9 @@ So, what's the vibe here? The `Patient ID` is our unique identifier, ensuring ea
 
 ## First & Last Rows
 
-Now that we've got the lay of the land, lets dive in and see what the top five records in our dataset look like. This peek at the first few rows will give us a quick feel for the data and help us spot any obvious issues or patterns right off the bat.
+Now that we've got the lay of the land, let's dive in and see what the top five records in our dataset look like. This peek at the first few rows will give us a quick feel for the data and help us spot any obvious issues or patterns right off the bat.
 
-To do this, well use the `.head()` method in Pandas, which will show us the first five rows. Its like getting a sneak preview of the opening act before the main event. This simple step is crucial for ensuring were on the right track and that our data is ready to roll.
+To do this, we'll use the `.head()` method in Pandas, which will show us the first five rows. Its like getting a sneak preview of the opening act before the main event. This simple step is crucial for ensuring were on the right track and that our data is ready to roll.
 
 ```python
 df.head()
@@ -123,7 +123,7 @@ df.head()
 
 ![table-head.png](images/table-head.png)
 
-Additionally, checking the last few records with the `.tail()` method will give us a complete sense of the datasets structure. This combination of the first and last rows provides a balanced overview, ensuring no surprises lurk at the end. Lets groove through the data and see what stories the top and bottom rows tell us!
+Additionally, checking the last few records with the `.tail()` method will give us a complete sense of the datasets structure. This combination of the first and last rows provides a balanced overview, ensuring no surprises lurk at the end. Let's groove through the data and see what stories the top and bottom rows tell us!
 
 ```python
 df.tail()
@@ -135,9 +135,9 @@ df.tail()
 
 ### Numerical Analysis
 
-Lets jazz up our dataset with some sweet statistical insights! With the `.describe()` method, were about to dive deep into the numerical nitty-gritty. This little trick gives us the lowdown on key stats like `count`, `mean`, and `standard deviation`, shedding light on the distribution and central tendencies of our numeric data.
+Let's jazz up our dataset with some sweet statistical insights! With the `.describe()` method, were about to dive deep into the numerical nitty-gritty. This little trick gives us the lowdown on key stats like `count`, `mean`, and `standard deviation`, shedding light on the distribution and central tendencies of our numeric data.
 
-So, why does this matter? Well, getting cozy with these numbers gives us a clearer picture of what we're working with. Its like fine-tuning our instruments before a performance---it ensures our analysis hits all the right notes. With these stats in hand, we can groove through our dataset with confidence, uncovering hidden patterns and trends along the way. Lets crank up the volume and see what the numbers have to say! 🎶
+So, why does this matter? Well, getting cozy with these numbers gives us a clearer picture of what we're working with. Its like fine-tuning our instruments before a performance---it ensures our analysis hits all the right notes. With these stats in hand, we can groove through our dataset with confidence, uncovering hidden patterns and trends along the way. Let's crank up the volume and see what the numbers have to say! 🎶
 
 ```python
 df.describe()
@@ -147,11 +147,11 @@ df.describe()
 
 ## Categorical Analysis
 
-Just like tuning into a different frequency, lets shift our focus to the categorical side of the spectrum. With the `.describe(include=['O'])` method, were about to unravel the mysteries of our categorical data. While the output might be a bit more concise compared to its numerical counterpart, it still packs a punch.
+Just like tuning into a different frequency, let's shift our focus to the categorical side of the spectrum. With the `.describe(include=['O'])` method, were about to unravel the mysteries of our categorical data. While the output might be a bit more concise compared to its numerical counterpart, it still packs a punch.
 
 By honing in on the categorical variables---those with a data type of `object`---we gain valuable insights into their distribution and uniqueness. Its like flipping through the pages of a well-worn record collection, each category offering its own distinct vibe.
 
-So, why bother? Well, understanding the landscape of our categorical data sets the stage for deeper analysis. Just like a DJ crafting the perfect mix, these insights help us blend and remix our data with precision. With the `.describe(include=['O'])` method in hand, were ready to spin some categorical magic and uncover the stories hidden within our dataset. Lets dive in and see what melodies await! 🎵
+So, why bother? We'll, understanding the landscape of our categorical data sets the stage for deeper analysis. Just like a DJ crafting the perfect mix, these insights help us blend and remix our data with precision. With the `.describe(include=['O'])` method in hand, were ready to spin some categorical magic and uncover the stories hidden within our dataset. Let's dive in and see what melodies await! 🎵
 
 ```python
 df.describe(include=['O'])
@@ -165,7 +165,7 @@ Time to remix our data and give it a fresh new vibe! With the code snippet youve
 
 Picture this: were gathering our data around the DJ booth, grouping it by the soothing sounds of `doctor_name` and the electrifying beats of `class`. Then, we crank up the volume with the aggregation function, counting up the hits in each group. Its like taking our dataset to a cool underground club, where every combination of doctor and class brings its own unique vibe.
 
-Why does this matter? Well, reshaping our data in this way allows us to uncover fresh insights and patterns that might have been hidden before. Its like remixing a classic track---same ingredients, but with a whole new flavor. So, grab your data and lets hit the dance floor, because were about to reshape it into something truly groovy! 🎧💃
+Why does this matter? Well, reshaping our data in this way allows us to uncover fresh insights and patterns that might have been hidden before. Its like remixing a classic track---same ingredients, but with a whole new flavor. So, grab your data and let's hit the dance floor, because were about to reshape it into something truly groovy! 🎧💃
 
 ```python
 # This aggreates the data by its column names, then we pass the aggregation function (size = count)
@@ -190,7 +190,7 @@ df.groupby(by =['bare_nuclei', 'class']).count()
 
 Alright, time to chill and tidy up our dataset! Now that we've wrapped up the early analysis phase, it's onto the next groove: cleaning up our data. Picture this: your data rolls in with all sorts of shapes and sizes, like records in a crate waiting to be sorted. But the real magic happens when we polish it up, turning it into the complete and comprehensive masterpiece we need.
 
-Sure, it's like sifting through a crate of vinyl, each record with its own scratches and dust. But trust me, the best jams come from the cleanest cuts. By whipping our dataset into shape, were setting the stage for some serious feature engineering and analysis down the line. So, grab your data mop and broom, because were about to sweep away the dust and uncover the smooth grooves beneath. Lets get cleaning! 🎶✨
+Sure, it's like sifting through a crate of vinyl, each record with its own scratches and dust. But trust me, the best jams come from the cleanest cuts. By whipping our dataset into shape, were setting the stage for some serious feature engineering and analysis down the line. So, grab your data mop and broom, because were about to sweep away the dust and uncover the smooth grooves beneath. Let's get cleaning! 🎶✨
 
 ## Missing Records
 
@@ -220,18 +220,17 @@ Good to know that the `patient_id` has 0 missing values, but as you may notice, 
 
 The real question isnt just about spotting the missing records and summing them up. The real jazz starts when you decide how to handle them before moving forward on your data wrangling journey. In this particular case, weve got a small amount of data with missing values---just `9 rows` out of `699`. Thats a mere `0.012`, or less than 1% of the total dataset. With such a small fraction, I'm thinking we drop them like they're hot, using the `.dropna` method. And while were at it, let's break down the cool attributes that groove along with the `.dropna` method.
 
-- `Axis`: Decides if youre dropping rows or columns. `0` means rows,
+- `Axis`: Decides if you're dropping rows or columns. `0` means rows,
   while `1` goes for columns.
-- `How`: Two vibes here---_any_ or _all_. If you choose `all`, it
+- `How`: Two vibes here --- _any_ or _all_. If you choose `all`, it
   drops rows or columns that are completely empty. Opt for `any`, and
   it drops those with even a single missing value.
 - `Inplace`: This ones crucial. If you set `inplace=True`, changes
-  will happen right on the DataFrame youre working with. If it's
+  will happen right on the DataFrame you're working with. If it's
   `False` (which is the default), the original DataFrame stays
   untouched, and a new one is returned.
 
-So, lets clean up those missing beats and keep the data flowing
-smoothly!
+So, let's clean up those missing beats and keep the data flowing smoothly!
 
 ```python
 df.dropna(axis=0, how='any', inplace=True)
@@ -241,212 +240,7 @@ df.dropna(axis=0, how='any', inplace=True)
 df
 ```
 
-```html
-<div>
-	<style scoped>
-		.dataframe tbody tr th:only-of-type {
-			vertical-align: middle;
-		}
-
-		.dataframe tbody tr th {
-			vertical-align: top;
-		}
-
-		.dataframe thead th {
-			text-align: right;
-		}
-	</style>
-	<table
-		border="1"
-		class="dataframe">
-		<thead>
-			<tr style="text-align: right;">
-				<th></th>
-				<th>patient_id</th>
-				<th>clump_thickness</th>
-				<th>cell_size_uniformity</th>
-				<th>cell_shape_uniformity</th>
-				<th>marginal_adhesion</th>
-				<th>single_ep_cell_size</th>
-				<th>bare_nuclei</th>
-				<th>bland_chromatin</th>
-				<th>normal_nucleoli</th>
-				<th>mitoses</th>
-				<th>class</th>
-				<th>doctor_name</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>0</th>
-				<td>1000025</td>
-				<td>5.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>2</td>
-				<td>1</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Doe</td>
-			</tr>
-			<tr>
-				<th>1</th>
-				<td>1002945</td>
-				<td>5.0</td>
-				<td>4.0</td>
-				<td>4</td>
-				<td>5</td>
-				<td>7</td>
-				<td>10</td>
-				<td>3.0</td>
-				<td>2.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Smith</td>
-			</tr>
-			<tr>
-				<th>2</th>
-				<td>1015425</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>2</td>
-				<td>2</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Lee</td>
-			</tr>
-			<tr>
-				<th>3</th>
-				<td>1016277</td>
-				<td>6.0</td>
-				<td>8.0</td>
-				<td>8</td>
-				<td>1</td>
-				<td>3</td>
-				<td>4</td>
-				<td>3.0</td>
-				<td>7.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Smith</td>
-			</tr>
-			<tr>
-				<th>4</th>
-				<td>1017023</td>
-				<td>4.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>3</td>
-				<td>2</td>
-				<td>1</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Wong</td>
-			</tr>
-			<tr>
-				<th>...</th>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-			</tr>
-			<tr>
-				<th>694</th>
-				<td>776715</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>3</td>
-				<td>2</td>
-				<td>1.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Lee</td>
-			</tr>
-			<tr>
-				<th>695</th>
-				<td>841769</td>
-				<td>2.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>2</td>
-				<td>1</td>
-				<td>1.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Smith</td>
-			</tr>
-			<tr>
-				<th>696</th>
-				<td>888820</td>
-				<td>5.0</td>
-				<td>10.0</td>
-				<td>10</td>
-				<td>3</td>
-				<td>7</td>
-				<td>3</td>
-				<td>8.0</td>
-				<td>10.0</td>
-				<td>2</td>
-				<td>malignant</td>
-				<td>Dr. Lee</td>
-			</tr>
-			<tr>
-				<th>697</th>
-				<td>897471</td>
-				<td>4.0</td>
-				<td>8.0</td>
-				<td>6</td>
-				<td>4</td>
-				<td>3</td>
-				<td>4</td>
-				<td>10.0</td>
-				<td>6.0</td>
-				<td>1</td>
-				<td>malignant</td>
-				<td>Dr. Lee</td>
-			</tr>
-			<tr>
-				<th>698</th>
-				<td>897471</td>
-				<td>4.0</td>
-				<td>8.0</td>
-				<td>8</td>
-				<td>5</td>
-				<td>4</td>
-				<td>5</td>
-				<td>10.0</td>
-				<td>4.0</td>
-				<td>1</td>
-				<td>malignant</td>
-				<td>Dr. Wong</td>
-			</tr>
-		</tbody>
-	</table>
-	<p>690 rows × 12 columns</p>
-</div>
-```
+![table-table-cleaning.png](images/table-cleaning.png)
 
 As you can see now, the rows number have been decreased, from `699` to `690`, down with `9` records, but left us with clean dataset with no empty cells in them. Let move on to check them!
 
@@ -454,12 +248,13 @@ As you can see now, the rows number have been decreased, from `699` to `690`, do
 df.isnull().values.any()
 ```
 
+````python
 False
+```
 
 ## Rechecking
 
-Now that we've got our dataset shining bright with no empty records, we might still be wondering if there's another way to double-check for any sneaky missing values. Good news, data groovers! Theres a slick method called `.isnull` that performs a boolean check, giving you a smooth true or false response to your inquiry. it's like having a jazz soloist confirming every note is in place. So, lets slide into it and make sure our dataset is as clean as a crisp vinyl record. Let's do this!
-🎷✨
+Now that we've got our dataset shining bright with no empty records, we might still be wondering if there's another way to double-check for any sneaky missing values. Good news, data groovers! Theres a slick method called `.isnull` that performs a boolean check, giving you a smooth true or false response to your inquiry. it's like having a jazz soloist confirming every note is in place. So, let's slide into it and make sure our dataset is as clean as a crisp vinyl record. Let's do this! 🎷✨
 
 ## Validating
 
@@ -467,222 +262,17 @@ So, our dataset's looking sharp, but let's not stop there. If you're curious whe
 
 ```python
 df.isnull()
-```
+````
 
-```html
-<div>
-	<style scoped>
-		.dataframe tbody tr th:only-of-type {
-			vertical-align: middle;
-		}
-
-		.dataframe tbody tr th {
-			vertical-align: top;
-		}
-
-		.dataframe thead th {
-			text-align: right;
-		}
-	</style>
-	<table
-		border="1"
-		class="dataframe">
-		<thead>
-			<tr style="text-align: right;">
-				<th></th>
-				<th>patient_id</th>
-				<th>clump_thickness</th>
-				<th>cell_size_uniformity</th>
-				<th>cell_shape_uniformity</th>
-				<th>marginal_adhesion</th>
-				<th>single_ep_cell_size</th>
-				<th>bare_nuclei</th>
-				<th>bland_chromatin</th>
-				<th>normal_nucleoli</th>
-				<th>mitoses</th>
-				<th>class</th>
-				<th>doctor_name</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>0</th>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-			</tr>
-			<tr>
-				<th>1</th>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-			</tr>
-			<tr>
-				<th>2</th>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-			</tr>
-			<tr>
-				<th>3</th>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-			</tr>
-			<tr>
-				<th>4</th>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-			</tr>
-			<tr>
-				<th>...</th>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-			</tr>
-			<tr>
-				<th>694</th>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-			</tr>
-			<tr>
-				<th>695</th>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-			</tr>
-			<tr>
-				<th>696</th>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-			</tr>
-			<tr>
-				<th>697</th>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-			</tr>
-			<tr>
-				<th>698</th>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-				<td>False</td>
-			</tr>
-		</tbody>
-	</table>
-	<p>690 rows × 12 columns</p>
-</div>
-```
+![table-table-false.png](images/table-false.png)
 
 So far, so groovy! From our dataset checks, everything's coming back with `False` values, and thats music to our ears. It means one thing: our dataset is spotless and ready to jam.
 
-With our data all tuned up, it's time to move on to the next leg of our journey. So, lets keep the rhythm going and dive into the next adventure. Onward to data greatness! 🎷✨
+With our data all tuned up, it's time to move on to the next leg of our journey. So, let's keep the rhythm going and dive into the next adventure. Onward to data greatness! 🎷✨
 
 ## Duplicate Records
 
-Alright, lets jazz things up and hunt for those duplicate records! First, we need to investigate whether our dataset is hiding any duplicate grooves in the cell records. By getting on top of this early, we can dodge potential hurdles that might throw our analysis offbeat and introduce unwanted bias.
+Alright, let's jazz things up and hunt for those duplicate records! First, we need to investigate whether our dataset is hiding any duplicate grooves in the cell records. By getting on top of this early, we can dodge potential hurdles that might throw our analysis offbeat and introduce unwanted bias.
 
 To kick off this detective work, we'll use the `.nunique` method. This little gem will give us some solid pointers to detect any anomalies lurking in our dataset. We'll start by grooving through the columns that are supposed to have unique identifiers---those special `object` datatype columns. In our case, it's the `patient_id` column. So, let's spin that record and see if we have any duplicates in the mix! 🎷🔍
 
@@ -739,7 +329,7 @@ Time to put on our detective hats and investigate this mystery. There's gotta be
 
 Alright, buckle up, because we're about to dive into the mystery of the duplicate `patient_id` records. Picture this: you're flipping through your dataset like a detective, and suddenly, you stumble upon some suspicious duplicates. But fear not, because weve got just the solution to unravel this enigma.
 
-Were borrowing a slick move from the data science playbook, courtesy of the wizards over at Stack Overflow. This little trick is like shining a spotlight on the shadows, revealing all the duplicate items lurking in the shadows of our dataset. With this solution in hand, well shine a light on those repeat offenders and get to the bottom of this duplication dilemma. So, get ready to crack the case and uncover the truth behind those duplicate patients! 🕵️‍♂️🔍
+Were borrowing a slick move from the data science playbook, courtesy of the wizards over at Stack Overflow. This little trick is like shining a spotlight on the shadows, revealing all the duplicate items lurking in the shadows of our dataset. With this solution in hand, we'll shine a light on those repeat offenders and get to the bottom of this duplication dilemma. So, get ready to crack the case and uncover the truth behind those duplicate patients! 🕵️‍♂️🔍
 
 - Borrowed from
   <https://stackoverflow.com/questions/14657241/how-do-i-get-a-list-of-all-the-duplicate-items-using-pandas-in-python>
@@ -748,220 +338,15 @@ Were borrowing a slick move from the data science playbook, courtesy of the wiza
 df[df.patient_id.duplicated(keep=False)].sort_values("patient_id")
 ```
 
-```html
-<div>
-	<style scoped>
-		.dataframe tbody tr th:only-of-type {
-			vertical-align: middle;
-		}
-
-		.dataframe tbody tr th {
-			vertical-align: top;
-		}
-
-		.dataframe thead th {
-			text-align: right;
-		}
-	</style>
-	<table
-		border="1"
-		class="dataframe">
-		<thead>
-			<tr style="text-align: right;">
-				<th></th>
-				<th>patient_id</th>
-				<th>clump_thickness</th>
-				<th>cell_size_uniformity</th>
-				<th>cell_shape_uniformity</th>
-				<th>marginal_adhesion</th>
-				<th>single_ep_cell_size</th>
-				<th>bare_nuclei</th>
-				<th>bland_chromatin</th>
-				<th>normal_nucleoli</th>
-				<th>mitoses</th>
-				<th>class</th>
-				<th>doctor_name</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>267</th>
-				<td>320675</td>
-				<td>3.0</td>
-				<td>3.0</td>
-				<td>5</td>
-				<td>2</td>
-				<td>3</td>
-				<td>10</td>
-				<td>7.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>malignant</td>
-				<td>Dr. Wong</td>
-			</tr>
-			<tr>
-				<th>272</th>
-				<td>320675</td>
-				<td>3.0</td>
-				<td>3.0</td>
-				<td>5</td>
-				<td>2</td>
-				<td>3</td>
-				<td>10</td>
-				<td>7.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>malignant</td>
-				<td>Dr. Smith</td>
-			</tr>
-			<tr>
-				<th>575</th>
-				<td>385103</td>
-				<td>5.0</td>
-				<td>1.0</td>
-				<td>2</td>
-				<td>1</td>
-				<td>2</td>
-				<td>1</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Smith</td>
-			</tr>
-			<tr>
-				<th>269</th>
-				<td>385103</td>
-				<td>1.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>2</td>
-				<td>1</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Doe</td>
-			</tr>
-			<tr>
-				<th>271</th>
-				<td>411453</td>
-				<td>5.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>2</td>
-				<td>1</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Wong</td>
-			</tr>
-			<tr>
-				<th>...</th>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-			</tr>
-			<tr>
-				<th>560</th>
-				<td>1321942</td>
-				<td>5.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>2</td>
-				<td>1</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Doe</td>
-			</tr>
-			<tr>
-				<th>660</th>
-				<td>1339781</td>
-				<td>1.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>2</td>
-				<td>1</td>
-				<td>2.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Lee</td>
-			</tr>
-			<tr>
-				<th>661</th>
-				<td>1339781</td>
-				<td>4.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>2</td>
-				<td>1</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Smith</td>
-			</tr>
-			<tr>
-				<th>672</th>
-				<td>1354840</td>
-				<td>2.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>2</td>
-				<td>1</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Wong</td>
-			</tr>
-			<tr>
-				<th>673</th>
-				<td>1354840</td>
-				<td>5.0</td>
-				<td>3.0</td>
-				<td>2</td>
-				<td>1</td>
-				<td>3</td>
-				<td>1</td>
-				<td>1.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Lee</td>
-			</tr>
-		</tbody>
-	</table>
-	<p>98 rows × 12 columns</p>
-</div>
-```
+![table-duplicate-false.png](images/table-duplicate.png)
 
 Alright, check this out: weve got a little situation on our hands. It seems like weve got `98` patient IDs making multiple appearances in our dataset. Some are showing up twice, while others are pulling off the triple play. Now, wouldn't it be sweet if we could get the lowdown on exactly how many times each patient ID is making a cameo?
 
-Well, guess what? Were about to dive into the nitty-gritty and unravel this mystery. Picture this: were peeling back the layers of duplication, analyzing each instance to tally up the total count. it's like detective work for data scientists---sleuthing through the numbers to uncover the truth. So, grab your magnifying glass and lets crack this case wide open. Were diving deep into the world of duplications, ready to count em up and bring clarity to our dataset! 🕵️‍♂️🔍
+Well, guess what? Were about to dive into the nitty-gritty and unravel this mystery. Picture this: were peeling back the layers of duplication, analyzing each instance to tally up the total count. it's like detective work for data scientists---sleuthing through the numbers to uncover the truth. So, grab your magnifying glass and let's crack this case wide open. Were diving deep into the world of duplications, ready to count em up and bring clarity to our dataset! 🕵️‍♂️🔍
 
 ### Count Duplications
 
-Lets analyze how many times a single `patient_id` value, was being recorded more than once, in the next table.
+Let's analyze how many times a single `patient_id` value, was being recorded more than once, in the next table.
 
 - Borrowed from
   <https://stackoverflow.com/questions/38309729/count-unique-values-with-pandas-per-groups>
@@ -985,292 +370,35 @@ patient_id
 - 809912 1
   Name: count, Length: 637, dtype: int64
 
-Surprisingly, some are getting recorded more than twice, some are even getting recorded 6 times. Lets move on to the next steps on how to deal with them.
+Surprisingly, some are getting recorded more than twice, some are even getting recorded 6 times. Let's move on to the next steps on how to deal with them.
 
 ```python
 df.drop_duplicates(subset="patient_id", keep='first', inplace = True)
 df # let's print them.
 ```
 
-```html
-<div>
-	<style scoped>
-		.dataframe tbody tr th:only-of-type {
-			vertical-align: middle;
-		}
+![table-drop-duplicate-false.png](images/table-drop-duplicate.png)
 
-		.dataframe tbody tr th {
-			vertical-align: top;
-		}
-
-		.dataframe thead th {
-			text-align: right;
-		}
-	</style>
-	<table
-		border="1"
-		class="dataframe">
-		<thead>
-			<tr style="text-align: right;">
-				<th></th>
-				<th>patient_id</th>
-				<th>clump_thickness</th>
-				<th>cell_size_uniformity</th>
-				<th>cell_shape_uniformity</th>
-				<th>marginal_adhesion</th>
-				<th>single_ep_cell_size</th>
-				<th>bare_nuclei</th>
-				<th>bland_chromatin</th>
-				<th>normal_nucleoli</th>
-				<th>mitoses</th>
-				<th>class</th>
-				<th>doctor_name</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>0</th>
-				<td>1000025</td>
-				<td>5.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>2</td>
-				<td>1</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Doe</td>
-			</tr>
-			<tr>
-				<th>1</th>
-				<td>1002945</td>
-				<td>5.0</td>
-				<td>4.0</td>
-				<td>4</td>
-				<td>5</td>
-				<td>7</td>
-				<td>10</td>
-				<td>3.0</td>
-				<td>2.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Smith</td>
-			</tr>
-			<tr>
-				<th>2</th>
-				<td>1015425</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>2</td>
-				<td>2</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Lee</td>
-			</tr>
-			<tr>
-				<th>3</th>
-				<td>1016277</td>
-				<td>6.0</td>
-				<td>8.0</td>
-				<td>8</td>
-				<td>1</td>
-				<td>3</td>
-				<td>4</td>
-				<td>3.0</td>
-				<td>7.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Smith</td>
-			</tr>
-			<tr>
-				<th>4</th>
-				<td>1017023</td>
-				<td>4.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>3</td>
-				<td>2</td>
-				<td>1</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Wong</td>
-			</tr>
-			<tr>
-				<th>...</th>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-				<td>...</td>
-			</tr>
-			<tr>
-				<th>693</th>
-				<td>763235</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>2</td>
-				<td>1</td>
-				<td>2.0</td>
-				<td>1.0</td>
-				<td>2</td>
-				<td>benign</td>
-				<td>Dr. Lee</td>
-			</tr>
-			<tr>
-				<th>694</th>
-				<td>776715</td>
-				<td>3.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>3</td>
-				<td>2</td>
-				<td>1.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Lee</td>
-			</tr>
-			<tr>
-				<th>695</th>
-				<td>841769</td>
-				<td>2.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>2</td>
-				<td>1</td>
-				<td>1.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Smith</td>
-			</tr>
-			<tr>
-				<th>696</th>
-				<td>888820</td>
-				<td>5.0</td>
-				<td>10.0</td>
-				<td>10</td>
-				<td>3</td>
-				<td>7</td>
-				<td>3</td>
-				<td>8.0</td>
-				<td>10.0</td>
-				<td>2</td>
-				<td>malignant</td>
-				<td>Dr. Lee</td>
-			</tr>
-			<tr>
-				<th>697</th>
-				<td>897471</td>
-				<td>4.0</td>
-				<td>8.0</td>
-				<td>6</td>
-				<td>4</td>
-				<td>3</td>
-				<td>4</td>
-				<td>10.0</td>
-				<td>6.0</td>
-				<td>1</td>
-				<td>malignant</td>
-				<td>Dr. Lee</td>
-			</tr>
-		</tbody>
-	</table>
-	<p>637 rows × 12 columns</p>
-</div>
-```
-
-Great, the above code just left us with one clean and no duplicated rows of data. Now the records are down from `690` to `637`. Now lets check whether their still duplicates from the previous list of `patient_id` we had queried earlier, lets try the `1182404` `patient_id` string for that matter.
+Great, the above code just left us with one clean and no duplicated rows of data. Now the records are down from `690` to `637`. Now let's check whether their still duplicates from the previous list of `patient_id` we had queried earlier, let's try the `1182404` `patient_id` string for that matter.
 
 ```python
 # let's check whether the 1182404 patient_id still has duplication.
 df.loc[df['patient_id'] == 1182404]
 ```
 
-```html
-<div>
-	<style scoped>
-		.dataframe tbody tr th:only-of-type {
-			vertical-align: middle;
-		}
-
-		.dataframe tbody tr th {
-			vertical-align: top;
-		}
-
-		.dataframe thead th {
-			text-align: right;
-		}
-	</style>
-	<table
-		border="1"
-		class="dataframe">
-		<thead>
-			<tr style="text-align: right;">
-				<th></th>
-				<th>patient_id</th>
-				<th>clump_thickness</th>
-				<th>cell_size_uniformity</th>
-				<th>cell_shape_uniformity</th>
-				<th>marginal_adhesion</th>
-				<th>single_ep_cell_size</th>
-				<th>bare_nuclei</th>
-				<th>bland_chromatin</th>
-				<th>normal_nucleoli</th>
-				<th>mitoses</th>
-				<th>class</th>
-				<th>doctor_name</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>136</th>
-				<td>1182404</td>
-				<td>4.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>1</td>
-				<td>2</td>
-				<td>1</td>
-				<td>2.0</td>
-				<td>1.0</td>
-				<td>1</td>
-				<td>benign</td>
-				<td>Dr. Lee</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-```
+![table-check-duplication.png](images/table-check-duplication.png)
 
 ```python
 df.isnull().values.any()
 ```
 
+```python
 False
+```
 
 # Visual Analysis
 
-And they say, picture says a thousand words. And I couldn't agree more with the statement, we as a human easily absorb information, through graphs, colors and visualization, in contrast to just plain numbers. In this section, lets try to visualize our findings better.
+And they say, picture says a thousand words. And I couldn't agree more with the statement, we as a human easily absorb information, through graphs, colors and visualization, in contrast to just plain numbers. In this section, let's try to visualize our findings better.
 
 There are numerous great visualization libraries out there for both Python and Pandas, but Ive been experimenting with Seaborn for awhile, and found them somewhat easier to implement to our objectives. Here are some of the benefit of having Seaborn as your library of choice for visualisation as taken from the official homepage:
 
@@ -1361,7 +489,7 @@ sns.despine()
 
 ## Class Cases For Each Doctor?
 
-As mentioned on the earlier sections, we have a column name `class`, which basically contains the value of either `benign` and `malignant`. We wish to understand further whether a persons tumor is `malignant` (cancerous) or `benign` (not cancerous). With that being said, lets get down to business and try to visualize them further down below.
+As mentioned on the earlier sections, we have a column name `class`, which basically contains the value of either `benign` and `malignant`. We wish to understand further whether a persons tumor is `malignant` (cancerous) or `benign` (not cancerous). With that being said, let's get down to business and try to visualize them further down below.
 
 ```python
 class_by_doctor = df[("class")].value_counts()
@@ -1398,7 +526,7 @@ sns.barplot(x = "patient_id", y='class', hue="doctor_name", ci=None, palette='Rd
 
 ## Class Case Per Doctor?
 
-As mentioned on the earlier sections, we have a column name `class`, which basically contains the value of `benign` and `malignant`. We wish to understand further whether a persons tumor is `malignant` (cancerous) or `benign` (not cancerous). With that being said, lets get down to business and try to visualize them further down below.
+As mentioned on the earlier sections, we have a column name `class`, which basically contains the value of `benign` and `malignant`. We wish to understand further whether a persons tumor is `malignant` (cancerous) or `benign` (not cancerous). With that being said, let's get down to business and try to visualize them further down below.
 
 ```python
 fig_dims = (12, 6)
@@ -1433,14 +561,14 @@ df.isnull().sum().sum()
 
 # One Hot Encoding
 
-Now that we've gone through the previous topic of visualizing our dataset, lets continue to the next section of preparing them in a way that our machine learning algorithms, by which will be using them near the end of this article, would be able to pick them up and run them through our `predictive model` easily. You may ask, "Of all the previous process, they're not enough?". Well apparently, it's not sufficient enough to meet the standards.
+Now that we've gone through the previous topic of visualizing our dataset, let's continue to the next section of preparing them in a way that our machine learning algorithms, by which will be using them near the end of this article, would be able to pick them up and run them through our `predictive model` easily. You may ask, "Of all the previous process, they're not enough?". Well apparently, it's not sufficient enough to meet the standards.
 
-As among one of the challenges that were facing is still within the dataset itself. Well be better off by modifying them to meet the requirements. Our dataset still consist some categorical values in them, the `doctors_name` and `class` columns are two of good examples. And Machine Learning algorithm dont normally like them. We need to modify these two columns, so that it would make it easier and less confusing for the machine learning model to process through. I came across this [great
+As among one of the challenges that were facing is still within the dataset itself. We'll be better off by modifying them to meet the requirements. Our dataset still consist some categorical values in them, the `doctors_name` and `class` columns are two of good examples. And Machine Learning algorithm dont normally like them. We need to modify these two columns, so that it would make it easier and less confusing for the machine learning model to process through. I came across this [great
 example](https://medium.com/@contactsunny/label-encoder-vs-one-hot-encoder-in-machine-learning-3fc273365621) on how to deal with the similar situation.
 
 ## `doctor_name` column. {#doctor_name-column}
 
-Lets first try to deal with the `doctor_name` column. This particular consist of 4 distinct values in them and how Pandas would handle them would probably as an object rather than an integer. Lets have our work around for this particular area. Will create another variable and call it `doctors_hotEncoded` and use the `get_dummies` method to transform them to an encoded one.
+Let's first try to deal with the `doctor_name` column. This particular consist of 4 distinct values in them and how Pandas would handle them would probably as an object rather than an integer. Let's have our work around for this particular area. Will create another variable and call it `doctors_hotEncoded` and use the `get_dummies` method to transform them to an encoded one.
 
 ```python
 doctors_hotEncoded = pd.get_dummies(df['doctor_name'])
@@ -1922,8 +1050,7 @@ sns.heatmap(df_cnf_matrix_percent, annot=True)
 
 ## Comparing Models
 
-Lets compare the accuracy score of all the classifier models used
-above.
+Let's compare the accuracy score of all the classifier models used above.
 
 ```python
 models = pd.DataFrame({
@@ -1939,14 +1066,9 @@ models = pd.DataFrame({
 models.sort_values(by='Score', ascending=False)
 ```
 
-From the above table, we can see that _Decision Tree_ and _Random
-Forest_ classfiers have the highest accuracy score. Among these two, we
-choose _Random Forest_ classifier as it has the ability to limit
-overfitting as compared to _Decision Tree_ classifier.
+From the above table, we can see that _Decision Tree_ and _Random Forest_ classfiers have the highest accuracy score. Among these two, we choose _Random Forest_ classifier as it has the ability to limit overfitting as compared to _Decision Tree_ classifier.
 
 # Create Prediction
-
-{.cell .code editable="true" slideshow="{\"slide_type\":\"\"}" tags="[]"}
 
 ```python
 submission = pd.DataFrame({
