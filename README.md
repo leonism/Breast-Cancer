@@ -1,29 +1,28 @@
-# Introduction
+# Predicting Breast Cancer Using Machine Learning
 
-![Alt text](images/predicting-breast-cancer-using-machine-learning.png "Predicting Breast Cancer Using Machine Learning")
+![predicting-breast-cancer-using-machine-learning.png](images/predicting-breast-cancer-using-machine-learning.png)
 
-It's something classical for just about any data science practitioners out there, in extending their initial milestone with various resources of dataset around the internet. That way, you could expand your skill sets and experiences with something that you're less familiar with and gain new knowledge and expertise from it. This article is no different, where I wish to explore further on different areas aside from my current domain of expertise.
+Imagine harnessing the power of machine learning to predict one of the most prevalent and life-threatening diseases: breast cancer. As data science enthusiasts, we often seek new challenges to expand our skills and dive into unexplored territories. This journey not only enhances our technical prowess but also broadens our understanding of diverse fields.
 
-Aside from `digital marketing` or `media investment`, `healthcare` is another industry that really caught my attention. According to [WHO official site](https://www.who.int/news-room/fact-sheets/detail/cancer#:~:text=Cancer%20is%20the%20second%20leading,-%20and%20middle-income%20countries.), Cancer is the second leading cause of death globally, and is responsible for an estimated 9.6 million deaths in 2018.
+This article invites you to venture beyond the realms of `digital marketing` and `media investment` into the captivating world of `healthcare`. Did you know that cancer is the second leading cause of death globally, accounting for approximately 9.6 million deaths in 2018, according to the [WHO](https://www.who.int/news-room/fact-sheets/detail/cancer#:~:text=Cancer%20is%20the%20second%20leading,-%20and%20middle-income%20countries.)? This staggering statistic underscores the urgent need for innovative solutions in early detection and treatment.
 
-And moving forward, this article will try to address and give an overview on how you may apply `Machine Learning` to predict the symptoms of breast cancer to a certain individual. The cancer dataset graciously donated from various academicians & can be found at [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29) site
+Join me as we explore how machine learning can be a game-changer in predicting breast cancer symptoms. We'll utilize a comprehensive dataset from [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29), generously provided by academicians, to build our predictive model.
 
-Furthermore, we'll be using [Python](https://www.python.org/) flavor of [Pandas](https://pandas.pydata.org/), [Seaborn](https://seaborn.pydata.org/) and [Scikit-learn](https://scikit-learn.org/) libraries to explore, clean, combine and run machine-learning prediction model for our use case. As it will become rather a long piece of article, I will try to break them down into the several steps, as per the following list of pointers.
+To bring this vision to life, we'll employ powerful Python libraries like [Pandas](https://pandas.pydata.org/), [Seaborn](https://seaborn.pydata.org/), and [Scikit-learn](https://scikit-learn.org/). These tools will help us explore, clean, and visualize data, ultimately leading to a robust machine learning model. Ready to embark on this exciting adventure? Let's break it down into manageable steps:
 
-# Steps
+1. **Loading Libraries**
+2. **Data Exploration**
+3. **Data Visualization**
+4. **One Hot Encoding**
+5. **Feature Generation**
+6. **Data Splitting**
+7. **Machine Learning Modeling**
+8. **Data Prediction**
 
-1. `Loading Libraries.`
-2. `Data Exploring.`
-3. `Data Visualization.`
-4. `One Hot Encoding.`
-5. `Feature Generation.`
-6. `Data Splitting.`
-7. `Machine Learning Modeling.`
-8. `Data Prediction.`
+Dive in and discover how you can leverage machine learning to make a meaningful impact in the fight against breast cancer.
 
-# Credits
+## Load Libraries
 
-1. Data source: [UCI](<https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)>)
-1. Scikit-Learn [Scikit-Learn](https://scikit-learn.org/)
-1. Pandas functionality: [Documentation](https://pandas.pydata.org/)
-1. And Stackoverflow's QnA Posts.
+Much like any other data exploratory process in Pandas or Python, the initial phase involves loading the essential libraries into our working Jupyter Notebook environment. These libraries are the backbone of our data analysis and machine learning endeavors, providing us with the tools needed to manipulate, visualize, and model our data. Whether you're using Jupyter Notebook, Google Colab, or Kaggle, the process remains largely the same. These platforms offer robust environments that support Python and its libraries, making them ideal for data science projects.
+
+For this tutorial, I'll stick to my faithful Jupyter Notebook environment, known for its versatility and user-friendly interface. Jupyter Notebook allows for an interactive data analysis experience, where code, visualizations, and explanatory text can coexist seamlessly. This setup will enable us to document our process comprehensively and adjust our code on the fly as we delve into the breast cancer dataset. While you're free to use any Integrated Development Environment (IDE) you prefer, Jupyter Notebook's integration with libraries like Pandas, Seaborn, and Scikit-learn makes it an excellent choice for this step-by-step guide.
