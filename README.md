@@ -6006,7 +6006,7 @@ sns.heatmap(df_cnf_matrix_percent, annot=True)
 
     <Axes: >
 
-![png](output_150_2.png)
+![png](/images/output_150_2.png)
 
 ## Comparing Models
 
