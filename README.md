@@ -4189,7 +4189,8 @@ pd.crosstab(combined_doctors_hotEncoded_df['class'], combined_doctors_hotEncoded
 
 Heatmap of Correlation between different features:
 
-> `Positive` = Positive correlation, i.e. increase in one feature will increase the other feature & vice-versa.<br > > `Negative` = Negative correlation, i.e. increase in one feature will decrease the other feature & vice-versa.
+> - `Positive` = Positive correlation, i.e. increase in one feature will increase the other feature & vice-versa.<br />
+> - `Negative` = Negative correlation, i.e. increase in one feature will decrease the other feature & vice-versa.
 
 In our case, we focus on which features have strong positive or negative correlation with the _Survived_ feature.
 
