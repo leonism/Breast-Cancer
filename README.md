@@ -4195,15 +4195,6 @@ Heatmap of Correlation between different features:
 In our case, we focus on which features have strong positive or negative correlation with the _Survived_ feature.
 
 ```python
-# plt.figure(figsize=(30,20))
-# plt.xlabel("Values on X axis")
-# plt.ylabel('Values on Y axis')
-# sns.heatmap(combined_doctors_hotEncoded_df.drop('patient_id',axis=1).corr(),
-#             xticklabels=True,
-#             vmax=0.6,
-#             square=True,
-#             annot=True)
-
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
