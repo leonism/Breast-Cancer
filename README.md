@@ -2355,7 +2355,7 @@ sns.countplot(x='doctor_name', hue='doctor_name', palette='RdBu_r', data=df, dod
 plt.show()
 ```
 
-![png](output_56_0.png)
+![png](images/output_56_0.png)
 
 - `Dr. Doe` :167
 - `Dr. Lee` :165
@@ -2435,7 +2435,7 @@ plt.show()
 
 ```
 
-![png](output_62_0.png)
+![png](/images/output_62_0.png)
 
 ```python
 # This time, let's do them horizontally
@@ -2463,7 +2463,7 @@ sns.barplot(x="patient_id", y="class", hue="doctor_name", errorbar=None, palette
 plt.show()
 ```
 
-![png](output_63_0.png)
+![png](/images/output_63_0.png)
 
 ## Class Case Per Doctor?
 
@@ -2505,7 +2505,7 @@ sns.barplot(x='doctor_name', y='patient_id', hue='class', errorbar=None, palette
 plt.show()
 ```
 
-![png](output_65_0.png)
+![png](/images/output_65_0.png)
 
 ```python
 # fig_dims = (12, 6)
@@ -2534,7 +2534,7 @@ sns.barplot(y='doctor_name', x='patient_id', hue='class', errorbar=None, palette
 plt.show()
 ```
 
-![png](output_66_0.png)
+![png](/images/output_66_0.png)
 
 ```python
 df.isnull().values.any()
@@ -4227,7 +4227,7 @@ sns.heatmap(corr_matrix,
 plt.show()
 ```
 
-![png](output_96_0.png)
+![png](/images/output_96_0.png)
 
 # Updating Data Types
 
