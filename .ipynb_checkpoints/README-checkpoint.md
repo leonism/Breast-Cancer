@@ -2,11 +2,9 @@
 
 ![header-main.jpg](images/predicting-breast-cancer-using-machine-learning.png)
 
----
-
 Imagine harnessing the power of machine learning to predict one of the most prevalent and life-threatening diseases: breast cancer. As data science enthusiasts, we often seek new challenges to expand our skills and dive into unexplored territories. This journey not only enhances our technical prowess but also broadens our understanding of diverse fields.
 
-This article invites you to venture beyond the realms of `digital marketing` and `media investment` into the captivating world of `healthcare`. Did you know that cancer is the second leading cause of death globally, accounting for approximately 9.6 million deaths in 2018, according to the [WHO](https://www.who.int/news-room/fact-sheets/detail/cancer#:~:text=Cancer%20is%20the%20second%20leading,-%20and%20middle-income%20countries.). This staggering statistic underscores the urgent need for innovative solutions in early detection and treatment.
+This article invites you to venture beyond the realms of `digital marketing` and `media investment` into the captivating world of `healthcare`. Did you know that cancer is the second leading cause of death globally, accounting for approximately 9.6 million deaths in 2018, according to the [WHO](https://www.who.int/news-room/fact-sheets/detail/cancer#:~:text=Cancer%20is%20the%20second%20leading,-%20and%20middle-income%20countries.)? This staggering statistic underscores the urgent need for innovative solutions in early detection and treatment.
 
 Join me as we explore how machine learning can be a game-changer in predicting breast cancer symptoms. We'll utilize a comprehensive dataset from [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29), generously provided by academicians, to build our predictive model.
 
@@ -23,13 +21,11 @@ To bring this vision to life, we'll employ powerful Python libraries like [Panda
 
 Dive in and discover how you can leverage machine learning to make a meaningful impact in the fight against breast cancer.
 
----
+## Load Libraries
 
-# 1. Load Libraries
+Much like any other data exploratory process in Pandas or Python, the initial phase involves loading the essential libraries into our working Jupyter Notebook environment. These libraries are the backbone of our data analysis and machine learning endeavors, providing us with the tools needed to manipulate, visualize, and model our data. Whether you're using Jupyter Notebook, Google Colab, or Kaggle, the process remains largely the same. These platforms offer robust environments that support Python and its libraries, making them ideal for data science projects.
 
-Much like any other data exploratory process in Pandas or Python, the initial phase involves loading the essential libraries into our working Jupyter Notebook environment. These libraries are the backbone of our data analysis and machine learning endeavors, providing us with the tools needed to manipulate, visualize, and model our data. Whether you're using `Jupyter Notebook`, `Google Colab`, or `Kaggle`, the process remains largely the same. These platforms offer robust environments that support Python and its libraries, making them ideal for data science projects.
-
-For this tutorial, I'll stick to my faithful Jupyter Notebook environment, known for its versatility and user-friendly interface. Jupyter Notebook allows for an interactive data analysis experience, where code, visualizations, and explanatory text can coexist seamlessly. This setup will enable us to document our process comprehensively and adjust our code on the fly as we delve into the breast cancer dataset. While you're free to use any Integrated Development Environment (IDE) you prefer, Jupyter Notebook's integration with libraries like `Pandas`, `Seaborn`, and `Scikit-learn` makes it an excellent choice for this step-by-step guide.
+For this tutorial, I'll stick to my faithful Jupyter Notebook environment, known for its versatility and user-friendly interface. Jupyter Notebook allows for an interactive data analysis experience, where code, visualizations, and explanatory text can coexist seamlessly. This setup will enable us to document our process comprehensively and adjust our code on the fly as we delve into the breast cancer dataset. While you're free to use any Integrated Development Environment (IDE) you prefer, Jupyter Notebook's integration with libraries like Pandas, Seaborn, and Scikit-learn makes it an excellent choice for this step-by-step guide.
 
 ```python
 import numpy as np # linear algebra
@@ -37,7 +33,7 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import seaborn as sns # visualization library
 ```
 
-## 1.1 Load Dataset
+## Load Dataset
 
 Start by creating a directory on your computer. Although I'm using a MacOS environment, the instructions provided here are applicable across different platforms. For the purpose of this walkthrough, let's name the directory `Project`. This will serve as our main working directory. Navigate into the `Project` folder, as this will be our base for organizing and executing the steps outlined in this tutorial. The next step is to download the breast cancer dataset from the [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28original%29) site, which we'll use for our machine learning model.
 
@@ -47,9 +43,7 @@ Within the `Project` directory, create a new folder named `data` and copy the do
 df = pd.read_csv('data/breast_cancer_data.csv')
 ```
 
----
-
-## 1.2 Dataset Size
+## Dataset Size
 
 Once we have completed the initial setup, we can proceed to analyze our dataset further. A common starting point in any data analysis project is to understand the size of the dataset. You might be wondering, just how large is our dataset? This question is easily answered using the `.shape` method in Pandas.
 
@@ -68,7 +62,7 @@ We can see we have the following information at hand:
 - rows `699`
 - columns `12`
 
-## 1.3 Data Types
+## Data Types
 
 It's always a good idea to get cozy with our dataset, not just by looking at its size, but by understanding what it's really made of. Think of it like getting to know a new friend—you wouldn't just ask them how tall they are, right? You'd want to know their quirks, their traits, what makes them tick. The same goes for our data. Knowing the types of data in each column helps us groove through the feature generation phase with ease.
 
@@ -93,7 +87,7 @@ df.dtypes
     doctor_name               object
     dtype: object
 
-### 1.3.1 The Data Legend
+### The Data Legend
 
 Let's lay down the smooth beats of our dataset. Here's the lowdown on the columns we have, as described by the source:
 
@@ -114,7 +108,7 @@ So, what’s the vibe here? The `Patient ID` is our unique identifier, ensuring 
 
 > Keep this in mind—if our goal is to predict whether a tumor is cancerous based on the other features, we’ll need to perform some one-hot encoding on the categorical data and clean up the numerical data. Just like tuning an instrument before a jam session, prepping our data ensures everything flows smoothly in our analysis.
 
-### 1.3.2 First & Last Rows
+## First & Last Rows
 
 Now that we've got the lay of the land, let's dive in and see what the top five records in our dataset look like. This peek at the first few rows will give us a quick feel for the data and help us spot any obvious issues or patterns right off the bat.
 
@@ -245,15 +239,12 @@ df.tail()
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
     .dataframe thead th {
         text-align: right;
     }
-
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -355,9 +346,9 @@ df.tail()
 
 <hr />
 
-# 2. Descriptive Statistics
+## Descriptive Statistics
 
-## 2.1 Numerical Analysis
+### Numerical Analysis
 
 Let's jazz up our dataset with some sweet statistical insights! With the `.describe()` method, we're about to dive deep into the numerical nitty-gritty. This little trick gives us the lowdown on key stats like `count`, `mean`, and `standard deviation`, shedding light on the distribution and central tendencies of our numeric data.
 
@@ -372,12 +363,15 @@ df.describe()
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -495,7 +489,7 @@ df.describe()
 </table>
 </div>
 
-## 2.2 Categorical Analysis
+## Categorical Analysis
 
 Just like tuning into a different frequency, let's shift our focus to the categorical side of the spectrum. With the `.describe(include=['O'])` method, we're about to unravel the mysteries of our categorical data. While the output might be a bit more concise compared to its numerical counterpart, it still packs a punch.
 
@@ -560,9 +554,7 @@ df.describe(include=['O'])
 </table>
 </div>
 
----
-
-# 3. Data Reshaping
+## Data Reshaping
 
 Time to remix our data and give it a fresh new vibe! With the code snippet you've got in hand, we're about to shake things up and reshape our dataset like never before. By grooving to the beat of `df.groupby(by=['doctor_name', 'class']).count()`, we're taking our data on a whole new journey.
 
@@ -580,12 +572,15 @@ df.groupby(by =['doctor_name', 'class']).count()
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -740,12 +735,15 @@ df.groupby(by =['class', 'doctor_name']).count()
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -898,12 +896,15 @@ df.groupby(by =['bare_nuclei', 'class']).count()
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1214,13 +1215,13 @@ df.groupby(by =['bare_nuclei', 'class']).count()
 
 <hr >
 
-# 4. Data Cleaning
+# Data Cleaning
 
 Alright, time to chill and tidy up our dataset! Now that we've wrapped up the early analysis phase, it's onto the next groove: cleaning up our data. Picture this: your data rolls in with all sorts of shapes and sizes, like records in a crate waiting to be sorted. But the real magic happens when we polish it up, turning it into the complete and comprehensive masterpiece we need.
 
 Sure, it's like sifting through a crate of vinyl, each record with its own scratches and dust. But trust me, the best jams come from the cleanest cuts. By whipping our dataset into shape, we're setting the stage for some serious feature engineering and analysis down the line. So, grab your data mop and broom, because we're about to sweep away the dust and uncover the smooth grooves beneath. Let's get cleaning! 🎶✨
 
-## 4.1 Missing Records
+## Missing Records
 
 Among one of the easiet way to identify whether or not your dataset has any missing data in them, would be to check them using the `.isna()` method and combine them with the `.sum()` function. It would in return, give you information on how many rows gone missing in your current dataset. Usually Pandas, would assing them with the value of `NaN`, but it can always be just a blank value in the record cell.
 
@@ -1242,9 +1243,9 @@ df.isna().sum()
     doctor_name              0
     dtype: int64
 
-Good to know that the `patient_id` has `0` missing values, but as you may notice, others columns much like `clump_thickness`, `cell_size_uniformity`, `bare_nuclei`, `bland_chromatin` and `normal_nucleoli`, and to put them in total, there are 9 missing rows in the dataset.
+Good to know that the `patient_id` has 0 missing values, but as you may notice, others columns much like `clump_thickness`, `cell_size_uniformity`, `bare_nuclei`, `bland_chromatin` and `normal_nucleoli`, and to put them in total, there are 9 missing rows in the dataset.
 
-## 4.2 How To Deal With?
+## How To Deal With?
 
 The real question isn't just about spotting the missing records and summing them up. The real jazz starts when you decide how to handle them before moving forward on your data wrangling journey. In this particular case, we've got a small amount of data with missing values—just `9 rows` out of `699`. That's a mere `0.012`, or less than 1% of the total dataset. With such a small fraction, I'm thinking we drop them like they're hot, using the `.dropna` method. And while we're at it, let’s break down the cool attributes that groove along with the `.dropna` method.
 
@@ -1474,11 +1475,11 @@ df.isnull().values.any()
 
     False
 
-## 4.3 Rechecking
+## Rechecking
 
 Now that we've got our dataset shining bright with no empty records, we might still be wondering if there’s another way to double-check for any sneaky missing values. Good news, data groovers! There's a slick method called `.isnull` that performs a boolean check, giving you a smooth true or false response to your inquiry. It's like having a jazz soloist confirming every note is in place. So, let's slide into it and make sure our dataset is as clean as a crisp vinyl record. Let’s do this! 🎷✨
 
-## 4.4 Validating
+## Validating
 
 So, our dataset’s looking sharp, but let’s not stop there. If you're curious whether there are still any hidden empty cells lurking around, there's a cool cat method called `.isnull` that’s perfect for the job. This boolean checker will let us know with a simple true or false if any values are missing. It’s like having an extra pair of ears in the studio, ensuring every beat is perfect. Let’s give it a spin and make sure everything's in tip-top shape! 🎶🔍
 
@@ -1491,12 +1492,15 @@ df.isnull()
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1687,9 +1691,11 @@ df.isnull()
 <p>690 rows × 12 columns</p>
 </div>
 
-So far, so groovy! From our dataset checks, everything's coming back with `False` values, and that's music to our ears. It means one thing: our dataset is spotless and ready to jam. With our data all tuned up, it's time to move on to the next leg of our journey. So, let's keep the rhythm going and dive into the next adventure. Onward to data greatness! 🎷✨
+So far, so groovy! From our dataset checks, everything's coming back with `False` values, and that's music to our ears. It means one thing: our dataset is spotless and ready to jam.
 
-## 4.5 Duplicate Records
+With our data all tuned up, it's time to move on to the next leg of our journey. So, let's keep the rhythm going and dive into the next adventure. Onward to data greatness! 🎷✨
+
+## Duplicate Records
 
 Alright, let's jazz things up and hunt for those duplicate records! First, we need to investigate whether our dataset is hiding any duplicate grooves in the cell records. By getting on top of this early, we can dodge potential hurdles that might throw our analysis offbeat and introduce unwanted bias.
 
@@ -1741,7 +1747,7 @@ We know for sure that our dataset is jamming with `690` rows and `12` columns (d
 
 Time to put on our detective hats and investigate this mystery. There’s gotta be some duplication in the `patient_id` column messing with our flow. Let’s dive deep, spin those records backwards, and uncover where the duplicates are hiding. This dataset is about to get a clean remix! 🎷🔍
 
-## 4.6 Duplicate Patients
+### Duplicate Patients
 
 Alright, buckle up, because we're about to dive into the mystery of the duplicate `patient_id` records. Picture this: you're flipping through your dataset like a detective, and suddenly, you stumble upon some suspicious duplicates. But fear not, because we've got just the solution to unravel this enigma.
 
@@ -1758,12 +1764,15 @@ df[df.patient_id.duplicated(keep=False)].sort_values("patient_id")
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1958,7 +1967,7 @@ Alright, check this out: we've got a little situation on our hands. It seems lik
 
 Well, guess what? We're about to dive into the nitty-gritty and unravel this mystery. Picture this: we're peeling back the layers of duplication, analyzing each instance to tally up the total count. It's like detective work for data scientists—sleuthing through the numbers to uncover the truth. So, grab your magnifying glass and let's crack this case wide open. We're diving deep into the world of duplications, ready to count 'em up and bring clarity to our dataset! 🕵️‍♂️🔍
 
-## 4.7 Duplicate Records
+### Count Duplications
 
 Let's analyze how many times a single `patient_id` value, was being recorded more than once, in the next table.
 
@@ -1994,12 +2003,15 @@ df # let's print them.
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2202,12 +2214,15 @@ df.loc[df['patient_id'] == 1182404]
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2253,7 +2268,7 @@ df.isnull().values.any()
 
     False
 
-# 5. Visual Analysis
+# Visual Analysis
 
 And they say, picture says a thousand words. And I couldn't agree more with the statement, we as a human easily absorb information, through graphs, colors and visualization, in contrast to just plain numbers. In this section, let's try to visualize our findings better.
 
@@ -2273,7 +2288,7 @@ Here is some of the functionality that seaborn offers:
 - Concise control over matplotlib figure styling with several [built-in themes](https://seaborn.pydata.org/tutorial/aesthetics.html#aesthetics-tutorial)
 - Tools for choosing [color palettes](https://seaborn.pydata.org/tutorial/color_palettes.html#palette-tutorial) that faithfully reveal patterns in your data
 
-## 5.2 Patients for Each Doctor?
+## Patients for Each Doctor?
 
 Ever wonder how many patients each doctor handled from the dataset? We know for sure, we have 4 doctors from the dataset, but haven't got some perfect ideas on how many patients each doctor is handling them. So why don't we try to visualize them, to see how many patients for each doctor needs to handle from the dataset?
 
@@ -2295,9 +2310,23 @@ df['patient_id'].count()
     637
 
 ```python
+# fig_dims = (12, 6)
+# fig, ax = plt.subplots(figsize = fig_dims)
+
+# ax.axes.set_title("How Many Patients Per Doctor", fontsize=14)
+# ax.set_xlabel('doctor_name',fontsize = 12)
+# ax.set_ylabel('Patients',fontsize = 12)
+
+# sns.set_style('whitegrid')
+# sns.countplot(x = 'doctor_name', palette = 'RdBu_r', data=df)
+# sns.despine()
+
 # updated code
 import matplotlib.pyplot as plt
 import seaborn as sns
+
+# Assuming df is your DataFrame
+# Sample DataFrame for illustration (Replace this with your actual DataFrame)
 import pandas as pd
 
 # Define the dimensions of the figure
@@ -2320,14 +2349,14 @@ sns.countplot(x='doctor_name', hue='doctor_name', palette='RdBu_r', data=df, dod
 plt.show()
 ```
 
-![png](images/output_62_0.png)
+![png](images/output_56_0.png)
 
 - `Dr. Doe` :167
 - `Dr. Lee` :165
 - `Dr. Smith`:164
 - `Dr. Wong` :141
 
-## 5.3 Class Cases For Each Doctor?
+## Class Cases For Each Doctor?
 
 As mentioned on the earlier sections, we have a column name `class`, which basically contains the value of either `benign` and `malignant`. We wish to understand further whether a person's tumor is `malignant` (cancerous) or `benign` (not cancerous). With that being said, let's get down to business and try to visualize them further down below.
 
@@ -2370,6 +2399,17 @@ else:
     Name: count, dtype: int64
 
 ```python
+# fig_dims = (12, 6)
+# fig, ax = plt.subplots(figsize=fig_dims)
+
+# ax.axes.set_title("Patient with Cancer Syndrome Per Doctor",fontsize=15)
+# ax.set_xlabel('X_axis',fontsize = 12)
+# ax.set_ylabel('Y_axis',fontsize = 12)
+
+# sns.despine()
+# sns.set_style('whitegrid')
+# sns.barplot(x="class", y="patient_id", hue="doctor_name", ci=None, palette='RdBu_r', data=df)
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -2389,10 +2429,21 @@ plt.show()
 
 ```
 
-![png](images/output_68_0.png)
+![png](/images/output_62_0.png)
 
 ```python
 # This time, let's do them horizontally
+
+# fig_dims = (12, 6)
+# fig, ax = plt.subplots(figsize=fig_dims)
+
+# ax.axes.set_title("Class of Patient Per Doctor",fontsize=15)
+# ax.set_xlabel('Doctor Name',fontsize = 12)
+# ax.set_ylabel('Patients',fontsize = 12)
+
+# sns.despine()
+# sns.set_style('whitegrid')
+# sns.barplot(x = "patient_id", y='class', hue="doctor_name", ci=None, palette='RdBu_r', data=df)
 
 # updated code
 ax.set_title("Class of Patient Per Doctor", fontsize=15)
@@ -2406,13 +2457,24 @@ sns.barplot(x="patient_id", y="class", hue="doctor_name", errorbar=None, palette
 plt.show()
 ```
 
-![png](images/output_69_0.png)
+![png](/images/output_63_0.png)
 
-## 5.4 Class Case Per Doctor?
+## Class Case Per Doctor?
 
 As mentioned on the earlier sections, we have a column name `class`, which basically contains the value of `benign` and `malignant`. We wish to understand further whether a person's tumor is `malignant` (cancerous) or `benign` (not cancerous). With that being said, let's get down to business and try to visualize them further down below.
 
 ```python
+# fig_dims = (12, 6)
+# fig, ax = plt.subplots(figsize=fig_dims)
+
+# ax.axes.set_title("Class Per Doctor",fontsize=15)
+# ax.set_xlabel('Doctor Name',fontsize = 12)
+# ax.set_ylabel('Patients',fontsize = 12)
+
+# sns.despine()
+# sns.set_style('whitegrid')
+# sns.barplot(x='doctor_name', y='patient_id', hue="class", ci=None, palette='RdBu_r', data=df)
+
 # udpated code
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -2437,9 +2499,20 @@ sns.barplot(x='doctor_name', y='patient_id', hue='class', errorbar=None, palette
 plt.show()
 ```
 
-![png](images/output_71_0.png)
+![png](/images/output_65_0.png)
 
 ```python
+# fig_dims = (12, 6)
+# fig, ax = plt.subplots(figsize=fig_dims)
+
+# ax.axes.set_title("Horizontal Classes Per Doctor",fontsize=15)
+# ax.set_xlabel('Doctor Name',fontsize = 12)
+# ax.set_ylabel('Patients',fontsize = 12)
+
+# sns.despine()
+# sns.set_style('whitegrid')
+# sns.barplot(y='doctor_name', x='patient_id', hue="class", ci=None, palette='RdBu_r', data=df)
+
 # updated code
 fig_dims = (12, 6)
 fig, ax = plt.subplots(figsize=fig_dims)
@@ -2455,7 +2528,7 @@ sns.barplot(y='doctor_name', x='patient_id', hue='class', errorbar=None, palette
 plt.show()
 ```
 
-![png](images/output_72_0.png)
+![png](/images/output_66_0.png)
 
 ```python
 df.isnull().values.any()
@@ -2464,15 +2537,13 @@ df.isnull().sum().sum()
 
     0
 
----
-
-# 6. One Hot Encoding
+# One Hot Encoding.
 
 Now that we've gone through the previous topic of visualizing our dataset, let's continue to the next section of preparing them in a way that our machine learning algorithms, by which will be using them near the end of this article, would be able to pick them up and run them through our `predictive model` easily. You may ask, "Of all the previous process, they're not enough?". Well apparently, it's not sufficient enough to meet the standards.
 
 As among one of the challenges that we're facing is still within the dataset itself. We'll be better off by modifying them to meet the requirements. Our dataset still consist some categorical values in them, the `doctors_name` and `class` columns are two of good examples. And Machine Learning algorithm don't normally like them. We need to modify these two columns, so that it would make it easier and less confusing for the machine learning model to process through. I came across this [great example](https://medium.com/@contactsunny/label-encoder-vs-one-hot-encoder-in-machine-learning-3fc273365621) on how to deal with the similar situation.
 
-## 6.1 `doctor_name` column.
+## `doctor_name` column.
 
 Let's first try to deal with the `doctor_name` column. This particular consist of 4 distinct values in them and how Pandas would handle them would probably as an object rather than an integer. Let's have our work around for this particular area. Will create another variable and call it `doctors_hotEncoded` and use the `get_dummies` method to transform them to an encoded one.
 
@@ -2489,12 +2560,15 @@ doctors_hotEncoded
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2602,12 +2676,15 @@ combined_doctors_hotEncoded_df
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2861,12 +2938,15 @@ combined_doctors_hotEncoded_df
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3100,7 +3180,7 @@ combined_doctors_hotEncoded_df.isnull().sum().sum()
 
     0
 
-## 6.2 `class` column.
+## `class` column.
 
 ```python
 # How to convert benign & malingant to 0 and 1
@@ -3117,12 +3197,15 @@ combined_doctors_hotEncoded_df
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3363,12 +3446,15 @@ combined_doctors_hotEncoded_df.head()
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3499,7 +3585,7 @@ combined_doctors_hotEncoded_df.isnull().sum().sum()
 
     0
 
-# 7. Feature Generation
+# Feature Generation
 
 This is among the crucial aspect area of `Machine Learning` model in the article, as this article [point out](https://towardsdatascience.com/data-wrangling-with-pandas-5b0be151df4e) an individual might be classified as having a cancer if meet the following condtion:
 
@@ -3517,89 +3603,11 @@ def celltypelabel(x):
         return('0')
 ```
 
-The code provided defines a function `celltypelabel` that takes a dictionary `x` as input and returns a string value based on the values of two specific keys within that dictionary: `'cell_size_uniformity'` and `'cell_shape_uniformity'`.
-
-Here’s a step-by-step explanation of the function:
-
-1. **Function Definition**:
-
-   ````python
-   def celltypelabel(x):
-       ```
-   This defines a function named `celltypelabel` that takes one argument, `x`.
-
-   ````
-
-2. **Conditional Statement**:
-
-   ````python
-   if ((x['cell_size_uniformity'] > 5) & (x['cell_shape_uniformity'] > 5)):
-       ```
-   This is a conditional statement that checks two conditions:
-   - The value of `'cell_size_uniformity'` in the dictionary `x` must be greater than 5.
-   - The value of `'cell_shape_uniformity'` in the dictionary `x` must also be greater than 5.
-
-   ````
-
-3. **Logical AND Operator (`&`)**:
-   The logical AND operator (`&`) is used to combine these two conditions. Both conditions must be true for this part of the if-statement to evaluate to True.
-
-4. **Return Statement**:
-
-   ```python
-   return('1')
-   ```
-
-   If both conditions are met (i.e., both `'cell_size_uniformity'` and `'cell_shape_uniformity'` are greater than 5), the function returns the string `'1'`.
-
-5. **Else Clause**:
-   ```python
-   else:
-       return('0')
-   ```
-   If either or both conditions are not met (i.e., either `'cell_size_uniformity'` or `'cell_shape_uniformity'` is not greater than 5), the function returns the string `'0'`.
-
 Then we use the pandas apply function to run the `celltypelabel(x)` function on the dataframe.
 
 ```python
 combined_doctors_hotEncoded_df['cell_type_label'] = combined_doctors_hotEncoded_df.apply(lambda x: celltypelabel(x), axis=1)
 ```
-
-The code snippet provided is used to apply the `celltypelabel` function to each row of the `combined_doctors_hotEncoded_df` DataFrame. Here’s a breakdown of what this code does:
-
-```python
-combined_doctors_hotEncoded_df['cell_type_label'] = combined_doctors_hotEncoded_df.apply(lambda x: celltypelabel(x), axis=1)
-```
-
-### 7.1 Explanation:
-
-1. **Apply Method**: The `.apply()` method is used to apply a function to each row or column of a DataFrame.
-2. **Lambda Function**: A lambda function is used to define the function to be applied. In this case, it calls the `celltypelabel` function.
-3. **Axis=1**: The `axis=1` parameter specifies that the function should be applied to each row (as opposed to each column, which would be `axis=0`).
-
-### 7.2 Step-by-Step Breakdown:
-
-1. **Define the Lambda Function**:
-
-   ```python
-   lambda x: celltypelabel(x)
-   ```
-
-   This defines a lambda function that takes a dictionary `x` and calls the `celltypelabel` function.
-
-2. **Apply the Lambda Function to Each Row**:
-
-   ```python
-   combined_doctors_hotEncoded_df.apply(lambda x: celltypelabel(x), axis=1)
-   ```
-
-   This applies the lambda function to each row of the DataFrame. The result of this application is a new Series where each element is the output of the `celltypelabel` function for that corresponding row.
-
-3. **Assign Result to New Column**:
-   ```python
-   combined_doctors_hotEncoded_df['cell_type_label'] = ...
-   ```
-   The result of applying the lambda function is assigned to a new column named `'cell_type_label'` in the DataFrame.
 
 ```python
 combined_doctors_hotEncoded_df[['patient_id', 'cell_type_label']]
@@ -3610,12 +3618,15 @@ combined_doctors_hotEncoded_df[['patient_id', 'cell_type_label']]
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3695,12 +3706,15 @@ combined_doctors_hotEncoded_df
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3967,12 +3981,15 @@ combined_doctors_hotEncoded_df.describe()
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -4124,12 +4141,15 @@ pd.crosstab(combined_doctors_hotEncoded_df['class'], combined_doctors_hotEncoded
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -4159,11 +4179,12 @@ pd.crosstab(combined_doctors_hotEncoded_df['class'], combined_doctors_hotEncoded
 </table>
 </div>
 
-# 8. Correlating Features
+## Correlating Features
 
 Heatmap of Correlation between different features:
 
-> `Positive` = Positive correlation, i.e. increase in one feature will increase the other feature & vice-versa.<br > > `Negative` = Negative correlation, i.e. increase in one feature will decrease the other feature & vice-versa.
+> - `Positive` = Positive correlation, i.e. increase in one feature will increase the other feature & vice-versa.<br />
+> - `Negative` = Negative correlation, i.e. increase in one feature will decrease the other feature & vice-versa.
 
 In our case, we focus on which features have strong positive or negative correlation with the _Survived_ feature.
 
@@ -4192,9 +4213,9 @@ sns.heatmap(corr_matrix,
 plt.show()
 ```
 
-![png](images/output_105_0.png)
+![png](/images/output_96_0.png)
 
-# 9. Updating Data Types
+# Updating Data Types
 
 ```python
 combined_doctors_hotEncoded_df.info()
@@ -4335,12 +4356,15 @@ combined_doctors_hotEncoded_df.head()
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -4470,9 +4494,16 @@ combined_doctors_hotEncoded_df.head()
 </table>
 </div>
 
-# 10. Spliting Dataset
+# Spliting Dataset
 
 ```python
+# train, test = train_test_split(combined_doctors_hotEncoded_df, test_size=0.2)
+# train = pd.DataFrame(train)
+# test = pd.DataFrame(test)
+
+# Install scikit-learn if not already installed
+# pip install scikit-learn
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
@@ -4494,61 +4525,61 @@ print(test.head())
 
     Train DataFrame:
          patient_id  clump_thickness  cell_size_uniformity  cell_shape_uniformity  \
-    304      653777              8.0                   3.0                      4
-    24      1059552              1.0                   1.0                      1
-    199     1214556              3.0                   1.0                      1
-    613     1016634              2.0                   3.0                      1
-    669     1350423              5.0                  10.0                     10
+    286      529329             10.0                  10.0                     10
+    151     1189266              7.0                   2.0                      4
+    592     1298484             10.0                   3.0                      4
+    276      434518              3.0                   1.0                      1
+    57      1113038              8.0                   2.0                      4
 
          marginal_adhesion  single_ep_cell_size  bare_nuclei  bland_chromatin  \
-    304                  9                    3         10.0              3.0
-    24                   1                    2          1.0              3.0
-    199                  1                    2          1.0              2.0
-    613                  1                    2          1.0              2.0
-    669                  8                    5          5.0              7.0
+    286                 10                   10         10.0              4.0
+    151                  1                    6         10.0              5.0
+    592                  5                    3         10.0              4.0
+    276                  1                    2          1.0              2.0
+    57                   1                    5          1.0              5.0
 
          normal_nucleoli  mitoses  class  Dr. Doe  Dr. Lee  Dr. Smith  Dr. Wong  \
-    304              3.0        1      1    False     True      False     False
-    24               1.0        1      0    False    False       True     False
-    199              1.0        1      0    False     True      False     False
-    613              1.0        1      0     True    False      False     False
-    669             10.0        1      1    False    False       True     False
+    286             10.0       10      1     True    False      False     False
+    151              4.0        3      1    False    False       True     False
+    592              1.0        1      1     True    False      False     False
+    276              1.0        1      0     True    False      False     False
+    57               4.0        4      1    False     True      False     False
 
          new_column  cell_type_label
-    304         3.0              0.0
-    24          1.0              0.0
-    199         1.0              0.0
-    613         1.0              0.0
-    669        10.0              1.0
+    286       100.0              1.0
+    151        12.0              0.0
+    592         1.0              0.0
+    276         1.0              0.0
+    57         16.0              0.0
 
     Test DataFrame:
          patient_id  clump_thickness  cell_size_uniformity  cell_shape_uniformity  \
-    582     1107684              6.0                  10.0                      5
-    520      333093              1.0                   1.0                      1
-    459     1267898              5.0                   1.0                      3
-    620     1083817              3.0                   1.0                      1
-    498     1204558              4.0                   1.0                      1
+    210     1219525              8.0                  10.0                     10
+    237     1241679              9.0                   8.0                      8
+    325      743348              3.0                   2.0                      2
+    211     1219859              8.0                  10.0                      8
+    417     1239967              1.0                   1.0                      1
 
          marginal_adhesion  single_ep_cell_size  bare_nuclei  bland_chromatin  \
-    582                  5                    4         10.0              6.0
-    520                  1                    3          1.0              1.0
-    459                  1                    2          1.0              1.0
-    620                  1                    2          1.0              2.0
-    498                  1                    2          1.0              2.0
+    210                 10                    5         10.0              8.0
+    237                  5                    6          2.0              4.0
+    325                  1                    2          1.0              2.0
+    211                  8                    4          8.0              7.0
+    417                  1                    2          1.0              2.0
 
          normal_nucleoli  mitoses  class  Dr. Doe  Dr. Lee  Dr. Smith  Dr. Wong  \
-    582             10.0        1      1    False     True      False     False
-    520              1.0        1      0     True    False      False     False
-    459              1.0        1      0    False     True      False     False
-    620              1.0        1      0    False    False       True     False
-    498              1.0        1      0    False     True      False     False
+    210             10.0        6      1     True    False      False     False
+    237             10.0        4      1    False    False      False      True
+    325              3.0        1      0     True    False      False     False
+    211              7.0        1      1    False    False       True     False
+    417              1.0        1      0    False     True      False     False
 
          new_column  cell_type_label
-    582        10.0              0.0
-    520         1.0              0.0
-    459         1.0              0.0
-    620         1.0              0.0
-    498         1.0              0.0
+    210        60.0              1.0
+    237        40.0              1.0
+    325         3.0              0.0
+    211         7.0              1.0
+    417         1.0              0.0
 
 ```python
 # Now that we've managed to split our main combined dataset into train and test dataset, let's test them.
@@ -4559,13 +4590,16 @@ train.head()
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
-   
+    }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -4592,104 +4626,104 @@ train.head()
   </thead>
   <tbody>
     <tr>
-      <th>304</th>
-      <td>653777</td>
-      <td>8.0</td>
-      <td>3.0</td>
-      <td>4</td>
-      <td>9</td>
-      <td>3</td>
+      <th>286</th>
+      <td>529329</td>
       <td>10.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>3.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>1059552</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>1.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>199</th>
-      <td>1214556</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>1.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>613</th>
-      <td>1016634</td>
-      <td>2.0</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>1.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>669</th>
-      <td>1350423</td>
-      <td>5.0</td>
       <td>10.0</td>
       <td>10</td>
-      <td>8</td>
-      <td>5</td>
-      <td>5.0</td>
-      <td>7.0</td>
+      <td>10</td>
+      <td>10</td>
       <td>10.0</td>
+      <td>4.0</td>
+      <td>10.0</td>
+      <td>10</td>
       <td>1</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>100.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>1189266</td>
+      <td>7.0</td>
+      <td>2.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>6</td>
+      <td>10.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>3</td>
       <td>1</td>
       <td>False</td>
       <td>False</td>
       <td>True</td>
       <td>False</td>
+      <td>12.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>592</th>
+      <td>1298484</td>
       <td>10.0</td>
+      <td>3.0</td>
+      <td>4</td>
+      <td>5</td>
+      <td>3</td>
+      <td>10.0</td>
+      <td>4.0</td>
       <td>1.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>276</th>
+      <td>434518</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>1113038</td>
+      <td>8.0</td>
+      <td>2.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>5</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>16.0</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
@@ -4704,12 +4738,15 @@ test.head()
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -4736,89 +4773,89 @@ test.head()
   </thead>
   <tbody>
     <tr>
-      <th>582</th>
-      <td>1107684</td>
-      <td>6.0</td>
+      <th>210</th>
+      <td>1219525</td>
+      <td>8.0</td>
       <td>10.0</td>
+      <td>10</td>
+      <td>10</td>
       <td>5</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>60.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>1241679</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8</td>
       <td>5</td>
+      <td>6</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>10.0</td>
       <td>4</td>
-      <td>10.0</td>
-      <td>6.0</td>
-      <td>10.0</td>
       <td>1</td>
-      <td>1</td>
+      <td>False</td>
+      <td>False</td>
       <td>False</td>
       <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>10.0</td>
-      <td>0.0</td>
+      <td>40.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
-      <th>520</th>
-      <td>333093</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>3</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>1.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>459</th>
-      <td>1267898</td>
-      <td>5.0</td>
-      <td>1.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>1.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>620</th>
-      <td>1083817</td>
+      <th>325</th>
+      <td>743348</td>
       <td>3.0</td>
-      <td>1.0</td>
-      <td>1</td>
+      <td>2.0</td>
+      <td>2</td>
       <td>1</td>
       <td>2</td>
       <td>1.0</td>
       <td>2.0</td>
-      <td>1.0</td>
+      <td>3.0</td>
       <td>1</td>
       <td>0</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>3.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>211</th>
+      <td>1219859</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>8</td>
+      <td>8</td>
+      <td>4</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>1</td>
+      <td>1</td>
       <td>False</td>
       <td>False</td>
       <td>True</td>
       <td>False</td>
+      <td>7.0</td>
       <td>1.0</td>
-      <td>0.0</td>
     </tr>
     <tr>
-      <th>498</th>
-      <td>1204558</td>
-      <td>4.0</td>
+      <th>417</th>
+      <td>1239967</td>
+      <td>1.0</td>
       <td>1.0</td>
       <td>1</td>
       <td>1</td>
@@ -4844,7 +4881,7 @@ train.info()
 ```
 
     <class 'pandas.core.frame.DataFrame'>
-    Index: 496 entries, 304 to 483
+    Index: 496 entries, 286 to 484
     Data columns (total 17 columns):
      #   Column                 Non-Null Count  Dtype
     ---  ------                 --------------  -----
@@ -4873,7 +4910,7 @@ test.info()
 ```
 
     <class 'pandas.core.frame.DataFrame'>
-    Index: 125 entries, 582 to 614
+    Index: 125 entries, 210 to 563
     Data columns (total 17 columns):
      #   Column                 Non-Null Count  Dtype
     ---  ------                 --------------  -----
@@ -4897,9 +4934,9 @@ test.info()
     dtypes: bool(4), float64(7), int64(6)
     memory usage: 14.2 KB
 
-# 11. Machine Learning
+# Machine Learning
 
-## 11.1 Feature Selection
+## Feature Selection
 
 We drop unnecessary columns/features and keep only the useful ones for our experiment. Column _patient_id_ is only dropped from Train set because we need _patient_id_ in Test set while for running the experimentation.
 
@@ -4908,7 +4945,7 @@ train = train.drop(['patient_id', 'new_column'], axis=1)
 test = test.drop('cell_type_label', axis=1)
 ```
 
-## 11.2 Classification & Accuracy
+## Classification & Accuracy
 
 Define training and testing set
 
@@ -4933,12 +4970,15 @@ train.head()
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -4963,94 +5003,94 @@ train.head()
   </thead>
   <tbody>
     <tr>
-      <th>304</th>
-      <td>8.0</td>
-      <td>3.0</td>
-      <td>4</td>
-      <td>9</td>
-      <td>3</td>
+      <th>286</th>
       <td>10.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>199</th>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>613</th>
-      <td>2.0</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>669</th>
-      <td>5.0</td>
       <td>10.0</td>
       <td>10</td>
-      <td>8</td>
-      <td>5</td>
-      <td>5.0</td>
-      <td>7.0</td>
+      <td>10</td>
+      <td>10</td>
       <td>10.0</td>
+      <td>4.0</td>
+      <td>10.0</td>
+      <td>10</td>
       <td>1</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>7.0</td>
+      <td>2.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>6</td>
+      <td>10.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>3</td>
       <td>1</td>
       <td>False</td>
       <td>False</td>
       <td>True</td>
       <td>False</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>592</th>
+      <td>10.0</td>
+      <td>3.0</td>
+      <td>4</td>
+      <td>5</td>
+      <td>3</td>
+      <td>10.0</td>
+      <td>4.0</td>
       <td>1.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>276</th>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>8.0</td>
+      <td>2.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>5</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
@@ -5065,12 +5105,15 @@ test.head()
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -5096,85 +5139,85 @@ test.head()
   </thead>
   <tbody>
     <tr>
-      <th>582</th>
-      <td>1107684</td>
-      <td>6.0</td>
+      <th>210</th>
+      <td>1219525</td>
+      <td>8.0</td>
       <td>10.0</td>
+      <td>10</td>
+      <td>10</td>
       <td>5</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>60.0</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>1241679</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8</td>
       <td>5</td>
+      <td>6</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>10.0</td>
       <td>4</td>
-      <td>10.0</td>
-      <td>6.0</td>
-      <td>10.0</td>
       <td>1</td>
-      <td>1</td>
+      <td>False</td>
+      <td>False</td>
       <td>False</td>
       <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>10.0</td>
+      <td>40.0</td>
     </tr>
     <tr>
-      <th>520</th>
-      <td>333093</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>3</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>459</th>
-      <td>1267898</td>
-      <td>5.0</td>
-      <td>1.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>620</th>
-      <td>1083817</td>
+      <th>325</th>
+      <td>743348</td>
       <td>3.0</td>
-      <td>1.0</td>
-      <td>1</td>
+      <td>2.0</td>
+      <td>2</td>
       <td>1</td>
       <td>2</td>
       <td>1.0</td>
       <td>2.0</td>
-      <td>1.0</td>
+      <td>3.0</td>
       <td>1</td>
       <td>0</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>211</th>
+      <td>1219859</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>8</td>
+      <td>8</td>
+      <td>4</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>1</td>
+      <td>1</td>
       <td>False</td>
       <td>False</td>
       <td>True</td>
       <td>False</td>
-      <td>1.0</td>
+      <td>7.0</td>
     </tr>
     <tr>
-      <th>498</th>
-      <td>1204558</td>
-      <td>4.0</td>
+      <th>417</th>
+      <td>1239967</td>
+      <td>1.0</td>
       <td>1.0</td>
       <td>1</td>
       <td>1</td>
@@ -5218,12 +5261,15 @@ X_train
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -5247,88 +5293,88 @@ X_train
   </thead>
   <tbody>
     <tr>
-      <th>304</th>
-      <td>8.0</td>
-      <td>3.0</td>
-      <td>4</td>
-      <td>9</td>
-      <td>3</td>
+      <th>286</th>
       <td>10.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>199</th>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>613</th>
-      <td>2.0</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>669</th>
-      <td>5.0</td>
       <td>10.0</td>
       <td>10</td>
-      <td>8</td>
-      <td>5</td>
-      <td>5.0</td>
-      <td>7.0</td>
+      <td>10</td>
+      <td>10</td>
       <td>10.0</td>
+      <td>4.0</td>
+      <td>10.0</td>
+      <td>10</td>
       <td>1</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>7.0</td>
+      <td>2.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>6</td>
+      <td>10.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>3</td>
       <td>1</td>
       <td>False</td>
       <td>False</td>
       <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>592</th>
+      <td>10.0</td>
+      <td>3.0</td>
+      <td>4</td>
+      <td>5</td>
+      <td>3</td>
+      <td>10.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>276</th>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>8.0</td>
+      <td>2.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>5</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
       <td>False</td>
     </tr>
     <tr>
@@ -5349,8 +5395,42 @@ X_train
       <td>...</td>
     </tr>
     <tr>
-      <th>291</th>
+      <th>616</th>
+      <td>3.0</td>
       <td>1.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>396</th>
+      <td>3.0</td>
       <td>1.0</td>
       <td>1</td>
       <td>1</td>
@@ -5366,72 +5446,38 @@ X_train
       <td>False</td>
     </tr>
     <tr>
-      <th>155</th>
+      <th>559</th>
       <td>5.0</td>
-      <td>5.0</td>
-      <td>5</td>
-      <td>6</td>
-      <td>3</td>
-      <td>10.0</td>
-      <td>3.0</td>
       <td>1.0</td>
       <td>1</td>
       <td>1</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>240</th>
-      <td>5.0</td>
-      <td>1.0</td>
-      <td>3</td>
-      <td>3</td>
       <td>2</td>
+      <td>1.0</td>
       <td>2.0</td>
-      <td>2.0</td>
-      <td>3.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>484</th>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
       <td>1</td>
       <td>0</td>
       <td>False</td>
       <td>False</td>
-      <td>True</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>6.0</td>
-      <td>8.0</td>
-      <td>8</td>
-      <td>1</td>
-      <td>3</td>
-      <td>4.0</td>
-      <td>3.0</td>
-      <td>7.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>False</td>
       <td>False</td>
       <td>True</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>483</th>
-      <td>8.0</td>
-      <td>7.0</td>
-      <td>8</td>
-      <td>5</td>
-      <td>5</td>
-      <td>10.0</td>
-      <td>9.0</td>
-      <td>10.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
     </tr>
   </tbody>
 </table>
@@ -5442,17 +5488,17 @@ X_train
 y_train
 ```
 
-    304    0.0
-    24     0.0
-    199    0.0
-    613    0.0
-    669    1.0
+    286    1.0
+    151    0.0
+    592    0.0
+    276    0.0
+    57     0.0
           ...
-    291    0.0
-    155    0.0
-    240    0.0
-    3      1.0
-    483    1.0
+    616    0.0
+    114    0.0
+    396    0.0
+    559    0.0
+    484    0.0
     Name: cell_type_label, Length: 496, dtype: float64
 
 ```python
@@ -5464,12 +5510,15 @@ X_test
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
     .dataframe tbody tr th {
         vertical-align: top;
     }
+
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -5493,76 +5542,76 @@ X_test
   </thead>
   <tbody>
     <tr>
-      <th>582</th>
-      <td>6.0</td>
+      <th>210</th>
+      <td>8.0</td>
       <td>10.0</td>
+      <td>10</td>
+      <td>10</td>
       <td>5</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8</td>
       <td>5</td>
+      <td>6</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>10.0</td>
       <td>4</td>
-      <td>10.0</td>
-      <td>6.0</td>
-      <td>10.0</td>
       <td>1</td>
-      <td>1</td>
+      <td>False</td>
+      <td>False</td>
       <td>False</td>
       <td>True</td>
-      <td>False</td>
-      <td>False</td>
     </tr>
     <tr>
-      <th>520</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>3</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>459</th>
-      <td>5.0</td>
-      <td>1.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>620</th>
+      <th>325</th>
       <td>3.0</td>
-      <td>1.0</td>
-      <td>1</td>
+      <td>2.0</td>
+      <td>2</td>
       <td>1</td>
       <td>2</td>
       <td>1.0</td>
       <td>2.0</td>
-      <td>1.0</td>
+      <td>3.0</td>
       <td>1</td>
       <td>0</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>211</th>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>8</td>
+      <td>8</td>
+      <td>4</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>1</td>
+      <td>1</td>
       <td>False</td>
       <td>False</td>
       <td>True</td>
       <td>False</td>
     </tr>
     <tr>
-      <th>498</th>
-      <td>4.0</td>
+      <th>417</th>
+      <td>1.0</td>
       <td>1.0</td>
       <td>1</td>
       <td>1</td>
@@ -5595,59 +5644,76 @@ X_test
       <td>...</td>
     </tr>
     <tr>
-      <th>277</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>74</th>
-      <td>10.0</td>
-      <td>6.0</td>
-      <td>4</td>
-      <td>1</td>
-      <td>3</td>
+      <th>15</th>
+      <td>7.0</td>
       <td>4.0</td>
-      <td>3.0</td>
-      <td>2.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>152</th>
-      <td>10.0</td>
-      <td>10.0</td>
-      <td>8</td>
       <td>6</td>
       <td>4</td>
-      <td>5.0</td>
-      <td>8.0</td>
-      <td>10.0</td>
+      <td>6</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
       <td>1</td>
       <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>529</th>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>645</th>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
       <td>True</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
     </tr>
     <tr>
-      <th>136</th>
-      <td>4.0</td>
+      <th>332</th>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>563</th>
+      <td>3.0</td>
       <td>1.0</td>
       <td>1</td>
       <td>1</td>
@@ -5660,23 +5726,6 @@ X_test
       <td>False</td>
       <td>True</td>
       <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>614</th>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
       <td>False</td>
     </tr>
   </tbody>
@@ -5684,11 +5733,17 @@ X_test
 <p>125 rows × 14 columns</p>
 </div>
 
-## 11.3 Logistic Regression
+## Logistic Regression
 
 [Logistic regression](https://en.wikipedia.org/wiki/Logistic_regression), or logit regression, or logit model is a regression model where the dependent variable (DV) is categorical. This article covers the case of a binary dependent variable—that is, where it can take only two values, "0" and "1", which represent outcomes such as pass/fail, win/lose, alive/dead or healthy/sick. Cases where the dependent variable has more than two outcome categories may be analysed in multinomial logistic regression, or, if the multiple categories are ordered, in ordinal logistic regression.
 
 ```python
+# clf = LogisticRegression()
+# clf.fit(X_train, y_train)
+# y_pred_log_reg = clf.predict(X_test)
+# acc_log_reg = round( clf.score(X_train, y_train) * 100, 2)
+# print (str(acc_log_reg) + '%')
+
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
@@ -5709,9 +5764,9 @@ print(str(acc_log_reg) + '%')
 
 ```
 
-    97.78%
+    97.18%
 
-## 11.4 Support Vector Machine (SVM)
+## Support Vector Machine (SVM)
 
 [Support Vector Machine (SVM)](https://en.wikipedia.org/wiki/Support_vector_machine) model is a Supervised Learning model used for classification and regression analysis. It is a representation of the examples as points in space, mapped so that the examples of the separate categories are divided by a clear gap that is as wide as possible. New examples are then mapped into that same space and predicted to belong to a category based on which side of the gap they fall.
 
@@ -5729,15 +5784,21 @@ acc_svc = round(clf.score(X_train, y_train) * 100, 2)
 print (acc_svc)
 ```
 
-    97.78
+    97.98
 
-## 11.5 Linear SVM
+## Linear SVM
 
 Linear SVM is a SVM model with linear kernel.
 
 In the below code, [LinearSVC](http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html) stands for Linear Support Vector Classification.
 
 ```python
+# clf = LinearSVC()
+# clf.fit(X_train, y_train)
+# y_pred_linear_svc = clf.predict(X_test)
+# acc_linear_svc = round(clf.score(X_train, y_train) * 100, 2)
+# print (acc_linear_svc)
+
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import LinearSVC
 from sklearn.metrics import accuracy_score
@@ -5758,9 +5819,9 @@ print(acc_linear_svc)
 
 ```
 
-    97.78
+    97.38
 
-## 11.6 $k$-Nearest Neighbors
+## $k$-Nearest Neighbors
 
 [$k$-nearest neighbors algorithm (k-NN)](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) is one of the simplest machine learning algorithms and is used for classification and regression. In both cases, the input consists of the $k$ closest training examples in the feature space. The output depends on whether $k$-NN is used for classification or regression:
 
@@ -5776,9 +5837,9 @@ acc_knn = round(clf.score(X_train, y_train) * 100, 2)
 print (acc_knn)
 ```
 
-    97.38
+    97.58
 
-## 11.7 Decision Tree
+## Decision Tree
 
 A [decision tree](https://en.wikipedia.org/wiki/Decision_tree) is a flowchart-like structure in which each internal node represents a "test" on an attribute (e.g. whether a coin flip comes up heads or tails), each branch represents the outcome of the test, and each leaf node represents a class label (decision taken after computing all attributes). The paths from root to leaf represent classification rules.
 
@@ -5792,7 +5853,7 @@ print (acc_decision_tree)
 
     100.0
 
-### 11.7.1 Random Forest
+### Random Forest
 
 [Random forests](https://en.wikipedia.org/wiki/Random_forest) or **random decision forests** are an **ensemble learning method** for classification, regression and other tasks, that operate by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees. Random decision forests correct for _decision trees' habit of overfitting to their training set_.
 
@@ -5808,7 +5869,7 @@ print (acc_random_forest)
 
     100.0
 
-## 11.8 Gaussian Naive Bayes
+## Gaussian Naive Bayes
 
 [Naive Bayes classifiers](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) are a family of simple probabilistic classifiers based on applying Bayes' theorem with strong (naive) independence assumptions between the features.[Bayes' theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem) (alternatively **Bayes' law** or **Bayes' rule**) describes the probability of an event, based on prior knowledge of conditions that might be related to the event. For example, if cancer is related to age, then, using Bayes' theorem, a person's age can be used to more accurately assess the probability that they have cancer, compared to the assessment of the probability of cancer made without knowledge of the person's age.
 
@@ -5822,9 +5883,9 @@ acc_gnb = round(clf.score(X_train, y_train) * 100, 2)
 print (acc_gnb)
 ```
 
-    90.12
+    90.73
 
-## 11.9 Perceptron
+## Perceptron
 
 [Perceptron](https://en.wikipedia.org/wiki/Perceptron) is a type of linear classifier, i.e. a classification algorithm that makes its predictions based on a linear predictor function combining a set of weights with the feature vector.
 
@@ -5836,9 +5897,9 @@ acc_perceptron = round(clf.score(X_train, y_train) * 100, 2)
 print (acc_perceptron)
 ```
 
-    84.07
+    92.74
 
-## 11.10 Stochastic Gradient Descent (SGD)
+## Stochastic Gradient Descent (SGD)
 
 [Stochastic gradient descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) (often shortened in **SGD**), also known as incremental gradient descent, is a stochastic approximation of the gradient descent optimization method for minimizing an objective function that is written as a sum of differentiable functions. In other words, SGD tries to find minima or maxima by iteration.
 
@@ -5850,9 +5911,9 @@ acc_sgd = round(clf.score(X_train, y_train) * 100, 2)
 print (acc_sgd)
 ```
 
-    94.15
+    93.75
 
-## 11.11 Confusion Matrix
+## Confusion Matrix
 
 A [confusion matrix](https://en.wikipedia.org/wiki/Confusion_matrix), also known as an error matrix, is a specific table layout that allows visualization of the performance of an algorithm. Each row of the matrix represents the instances in a predicted class while each column represents the instances in an actual class (or vice versa). The name stems from the fact that it makes it easy to see if the system is confusing two classes (i.e. commonly mislabelling one as another).
 
@@ -5864,7 +5925,7 @@ $\begin{matrix} & Predicted Positive & Predicted Negative \\ Actual Positive & T
 
 In our (Titanic problem) case:
 
-**True Positive:** The classifier predicted _Survived_ **and** the passenger actually _Survived_.<br /> > **True Negative:** The classifier predicted _Not Survived_ **and** the passenger actually _Not Survived_.<br /> > **False Postiive:** The classifier predicted _Survived_ **but** the passenger actually _Not Survived_.<br /> > **False Negative:** The classifier predicted _Not Survived_ **but** the passenger actually _Survived_.
+<br /> > **True Positive:** The classifier predicted _Survived_ **and** the passenger actually _Survived_.<br /> > **True Negative:** The classifier predicted _Not Survived_ **and** the passenger actually _Not Survived_.<br /> > **False Postiive:** The classifier predicted _Survived_ **but** the passenger actually _Not Survived_.<br /> > **False Negative:** The classifier predicted _Not Survived_ **but** the passenger actually _Survived_.
 
 In the example code below, we plot a confusion matrix for the prediction of **_Random Forest Classifier_** on our training dataset. This shows how many entries are correctly and incorrectly predicted by our classifer.
 
@@ -5917,8 +5978,8 @@ sns.heatmap(df_cnf_matrix_percent, annot=True)
     Accuracy: 100 %
 
     Confusion Matrix in Numbers
-    [[406   0]
-     [  0  90]]
+    [[408   0]
+     [  0  88]]
 
     Confusion Matrix in Percentage
     [[1. 0.]
@@ -5931,9 +5992,9 @@ sns.heatmap(df_cnf_matrix_percent, annot=True)
 
     <Axes: >
 
-![png](images/output_159_2.png)
+![png](/images/output_150_2.png)
 
-# 12. Comparing Models
+## Comparing Models
 
 Let's compare the accuracy score of all the classifier models used above.
 
@@ -5986,39 +6047,39 @@ models.sort_values(by='Score', ascending=False)
       <td>100.00</td>
     </tr>
     <tr>
-      <th>0</th>
-      <td>Logistic Regression</td>
-      <td>97.78</td>
-    </tr>
-    <tr>
       <th>1</th>
       <td>Support Vector Machines</td>
-      <td>97.78</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Linear SVC</td>
-      <td>97.78</td>
+      <td>97.98</td>
     </tr>
     <tr>
       <th>3</th>
       <td>KNN</td>
+      <td>97.58</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Linear SVC</td>
       <td>97.38</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Logistic Regression</td>
+      <td>97.18</td>
     </tr>
     <tr>
       <th>8</th>
       <td>Stochastic Gradient Decent</td>
-      <td>94.15</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Naive Bayes</td>
-      <td>90.12</td>
+      <td>93.75</td>
     </tr>
     <tr>
       <th>7</th>
       <td>Perceptron</td>
-      <td>84.07</td>
+      <td>92.74</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Naive Bayes</td>
+      <td>90.73</td>
     </tr>
   </tbody>
 </table>
@@ -6026,7 +6087,7 @@ models.sort_values(by='Score', ascending=False)
 
 From the above table, we can see that _Decision Tree_ and _Random Forest_ classfiers have the highest accuracy score. Among these two, we choose _Random Forest_ classifier as it has the ability to limit overfitting as compared to _Decision Tree_ classifier.
 
-# 13.Create Prediction
+# Create Prediction
 
 ```python
 submission = pd.DataFrame({
