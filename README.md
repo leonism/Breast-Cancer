@@ -357,6 +357,8 @@ df.tail()
 
 # 2. Descriptive Statistics
 
+In Descriptive statistics, we are describing our data with the help of various representative methods using `charts`, `graphs`, `tables`, `excel files`, etc. In descriptive statistics, we describe our data in some manner and present it in a meaningful way so that it can be easily understood. Most of the time it is performed on small data sets and this analysis helps us a lot to predict some future trends based on the current findings. Some measures that are used to describe a data set are measures of central tendency and measures of variability or dispersion.
+
 ## 2.1 Numerical Analysis
 
 Let's jazz up our dataset with some sweet statistical insights! With the `.describe()` method, we're about to dive deep into the numerical nitty-gritty. This little trick gives us the lowdown on key stats like `count`, `mean`, and `standard deviation`, shedding light on the distribution and central tendencies of our numeric data.
